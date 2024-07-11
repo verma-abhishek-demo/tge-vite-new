@@ -1,0 +1,205 @@
+ /* partOne*/
+ 
+ .frame-44 {
+  background: #000000;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0 5px 0;
+  margin: 0 10px;
+}
+
+.frame-5 {
+  border-right: 1px solid rgba(1, 0, 128, 0.21);
+  margin-right: 36.5px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+  width: 360px;
+  box-sizing: border-box;
+}
+
+.frame-431 {
+  border-radius: 31px;
+  background: #FFFFFF;
+  margin-right: 5.2px;
+  display: flex;
+  padding: 8px;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.mask-group-69 {
+  width: 12px;
+  height: 12px;
+}
+.frame-331 {
+  margin: 6px 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.tourwithtge-23-gmail-com-1 {
+  overflow-wrap: break-word;
+  font-family: 'Merriweather Sans';
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
+}
+
+
+
+.frame-52 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.frame-401 {
+  border-radius: 34px;
+  background: #FFFFFF;
+  margin-right: 5.1px;
+  display: flex;
+  padding: 8px;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+.mask-group-70 {
+  width: 12px;
+  height: 12px;
+}
+
+.frame-361 {
+  margin: 5px 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.container-31 {
+  overflow-wrap: break-word;
+  font-family: 'Merriweather Sans';
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
+}
+
+
+/* partTwo */
+.frame-45 {
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.frame-3 {
+  display: flex;
+  width: 77.1px;
+  height: 49px;
+  box-sizing: border-box;
+}
+
+.whats-app-image-20240503-at-140721 {
+  background: url('src/assets/images/whats_app_image_20240503_at_14072.png');
+  width: 77.1px;
+  height: 49px;
+}
+
+.frame-345075 {
+  border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.4);
+    background: #CA1C26;
+    margin-bottom: 0.6px;
+    display: flex;
+    flex-direction: row;
+    padding: 11px 6px;
+    width: 142px;
+    box-sizing: border-box;
+    font-size: 10px;
+    margin-right: 11px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.frame-100 {
+  margin-right: 10px;
+  display: flex;
+  width: 25px;
+  height: 21.9px;
+  box-sizing: border-box;
+}
+.mask-group-72 {
+  width: 25px;
+  height: 21.9px;
+}
+
+.frame-344951 {
+  margin: 0.9px 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.plan-atrip {
+  overflow-wrap: break-word;
+  font-family: 'Merriweather Sans';
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  font-variant: small-caps;
+  color: #FFFFFF;
+}
+
+.group-112 {
+  display: flex;
+}
+
+.frame-53 {
+  border-radius: 7px;
+  border: 1px solid rgba(1, 0, 128, 0.51);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.frame-8 {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.enquiry-sub1 {
+  font-family: 'Merriweather Sans';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.333;
+  color: #030240;
+}
+
+
+
+.enquiry {
+  overflow-wrap: break-word;
+  font-family: 'Merriweather Sans';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #030240;
+}
+
+.modal-backdrop.show {
+  opacity: 0 !important;
+  z-index: 99 !important;
+}
+
+
+
+

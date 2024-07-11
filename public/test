@@ -1,0 +1,77 @@
+<template>
+    <div class="wrapper">
+        <TripPackage v-for="tour in tours" :key="tour.id" :trip="tour.trip" :image="tour.image" :title="tour.title"
+            :price="tour.price" :rating="tour.rating" :reviews="tour.reviews" />
+        <button @click="loadData">Fetch Data</button>
+        <div v-if="error">{{ error }}</div>
+        <div v-if="data">{{ data }}</div>
+    </div>
+</template>
+
+<script>
+import TripPackage from './TripPackage.vue';
+
+//import ladakhImage from '@/assets/images/trip-foto.png';
+//import manaliImage from '@/assets/images/trip-foto-6.png';
+//import honeymoonImage from '@/assets/images/trip-foto-2.png';
+//import gujratImage from '@/assets/images/trip-foto-3.png';
+//import rajasthanImage from '@/assets/images/trip-foto-4.png';
+//import kerelaImage from '@/assets/images/trip-foto-5.png';
+
+import { mapActions, mapGetters } from 'vuex';
+export default {
+    components: {
+        TripPackage
+    },
+    computed: {
+        ...mapGetters(['getData', 'getError']),
+        loadData() {
+            return this.getData;
+        },
+        loadError() {
+            return this.getError;
+        }
+    },
+    methods: {
+        ...mapActions(['fetchData']),
+        loadData() {
+            this.fetchData();
+        }
+    },
+    data() {
+        return {
+            tours: [],
+        }
+    }
+
+
+
+
+
+
+    //data() {
+    //    return {
+    //        tours: [
+    //            { id: 1, trip: 'Ladakh Trip', image: ladakhImage, title: 'Thrilling Ladakh by Volvo', price: '₹20,700/-', rating: 4.5, reviews: 234 },
+    //            { id: 2, trip: 'Manali Trip', image: manaliImage, title: 'Amazing Manali', price: '₹15,500/-', rating: 4.2, reviews: 190 },
+    //            { id: 3, trip: 'Honeymoon Trip', image: honeymoonImage, title: 'Honeymoon trip ', price: '₹45,500/-', rating: 4.7, reviews: 321 },
+    //            { id: 4, trip: 'Gujrat Trip', image: gujratImage, title: 'Gujrat trip ', price: '₹65,500/-', rating: 4.3, reviews: 432 },
+    //            { id: 5, trip: 'Rajasthan Trip', image: rajasthanImage, title: 'Rajasthan trip ', price: '₹55,500/-', rating: 4.9, reviews: 143 },
+    //            { id: 6, trip: 'Kerela Trip', image: kerelaImage, title: 'Kerela trip ', price: '₹75,500/-', rating: 4.6, reviews: 546 },
+    //        ]
+    //    }
+
+    
+    //}
+}
+</script>
+
+<style scoped>
+.wrapper {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
+

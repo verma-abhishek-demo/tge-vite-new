@@ -1,0 +1,3453 @@
+.plan-atrip-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: url('@/assets/images/iphone_1415_pro_max_1.jpg') 50% / cover no-repeat;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 2s ease-in-out;
+    z-index: 1000;
+}
+
+.plan-atrip-container.visible {
+    transform: translateX(0);
+}
+
+.plan-atrip .container {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+}
+
+.cityGap {
+    margin-bottom: 15px;
+}
+
+.plan-atrip {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.where-areyou-planningto-go {
+    margin-bottom: 20px;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+}
+
+.where-areyou-planningto-go-sub-1 {
+    color: #CA1C26;
+}
+
+.frame-34632,
+.frame-34634 {
+    margin-bottom: 20px;
+    margin-left: 32px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.destination-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.city-name {
+    cursor: pointer;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 25px;
+    color: #171717;
+    margin-bottom: 15px;
+}
+
+
+
+/*step-2*/
+
+.property-1-month .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+}
+
+.property-1-month .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.property-1-month {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 347px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+}
+
+.property-1-month .which-month-are-you-travelling {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+}
+
+.property-1-month .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .mask-group {
+    margin: 1.5px 7px 1.5px 0;
+    width: 20px;
+    height: 20px;
+}
+
+.property-1-month .frame-125 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    padding: 7.5px 0 7.5px 13px;
+    width: 130px;
+    box-sizing: border-box;
+}
+
+.property-1-month .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .rectangle-204 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .rectangle-205 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .rectangle-206 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .rectangle-207 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-month .frame-1251 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-34656 {
+    margin: 0 11px 74px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+}
+
+.property-1-month .may {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    font-variant: small-caps;
+    color: #000000;
+}
+
+.property-1-month .c {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .sun {
+    background: url('@/assets/images/sun.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .frame-1252 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-34657 {
+    margin: 0 2.4px 18px 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-1253 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-346571 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(197, 196, 254, 0.21);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-346572 {
+    margin: 0 0 18px 0.6px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .june {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1254 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .sun-1 {
+    background: url('@/assets/images/sun.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .c-1 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34658 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-346573 {
+    margin: 0 0 18px 0.5px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .july {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1255 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-2 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34659 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    position: relative;
+    display: flex;
+    padding: 46px 0.4px 47px 0;
+    width: 140px;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-346574 {
+    margin: 0 12.1px 18px 11.5px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .august {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1256 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .sun-2 {
+    background: url('@/assets/images/sun.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .c-3 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34660 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(197, 196, 254, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15.8px 0 15.5px;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-346575 {
+    margin-bottom: 18px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .september {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1257 {
+    margin-right: 0.5px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-4 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34661 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-346576 {
+    margin: 0 0.6px 18px 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .october {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1258 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .sun-3 {
+    background: url('@/assets/images/sun.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .c-5 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34662 {
+    border-radius: 6px;
+    border: 1px solid rgba(178, 255, 250, 0.54);
+    background: rgba(217, 251, 249, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 18.8px 0 18px;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-346577 {
+    margin-bottom: 18px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .november {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-1259 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-6 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34663 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    position: relative;
+    display: flex;
+    padding: 46px 19.9px 47px 19.5px;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-346578 {
+    margin-bottom: 18px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .december {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-12510 {
+    margin: 0 7.3px 0 7.5px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-7 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34664 {
+    border-radius: 6px;
+    border: 1px solid rgba(178, 255, 250, 0.56);
+    background: rgba(217, 251, 249, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-346579 {
+    margin: 0 0.1px 18px 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .january {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-12511 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-8 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34665 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(197, 196, 254, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-3465710 {
+    margin-bottom: 18px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .february {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-12512 {
+    margin-left: 0.1px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .sun-4 {
+    background: url('@/assets/images/sun.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .c-9 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34666 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-3465711 {
+    margin: 0 0 18px 1px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .march {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-12513 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-10 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-34667 {
+    border-radius: 6px;
+    border: 1px solid rgba(178, 255, 250, 0.56);
+    background: rgba(217, 251, 249, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+.property-1-month .frame-3465712 {
+    margin: 0 0 18px 0.4px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-month .april {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .frame-12514 {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .c-11 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-month .snow {
+    background: url('@/assets/images/snow.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .snow-1 {
+    background: url('@/assets/images/snow.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .snow-2 {
+    background: url('@/assets/images/snow.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .flower {
+    background: url('@/assets/images/flower.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .flower-1 {
+    background: url('@/assets/images/flower.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .flower-2 {
+    background: url('@/assets/images/flower.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .flower-3 {
+    background: url('@/assets/images/flower.png') 50% / cover no-repeat;
+    margin: 1.5px 3px 1.5px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.property-1-month .bookmark {
+    background: url('@/assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    width: 30px;
+    height: 30px;
+}
+
+.property-1-month .bookmark-1 {
+    background: url('@/assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    width: 30px;
+    height: 30px;
+}
+
+.property-1-month .frame-12515 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-12516 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .frame-12517 {
+    margin: 0 41px 0 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-month .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.property-1-month .container-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.property-1-month .container-2 {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+}
+
+.property-1-month .mask-group-1 {
+    width: 25px;
+    height: 25px;
+}
+
+/*Section - 3 */
+
+.property-1-date {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 235.6px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+}
+
+.property-1-date .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-date .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+}
+
+.property-1-date .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.property-1-date .frame-34656 {
+    margin: 0 11px 61px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+}
+
+.property-1-date .when-is-your-departure-date {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.property-1-date .frame-125 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+}
+
+.property-1-date .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .rectangle-204 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .rectangle-205 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .rectangle-206 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .rectangle-207 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+}
+
+.property-1-date .frame-34668 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 11.1px 7.5px 8px;
+    box-sizing: border-box;
+}
+
+.property-1-date .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-date .aug-2024 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+}
+
+.property-1-date .mask-group {
+    margin: 2.5px 7px 2.5px 0;
+    width: 18px;
+    height: 18px;
+}
+
+.property-1-date .calender {
+    border-radius: 19.7px;
+    border: 0.8px solid #DCDCDC;
+    background: #FFFFFF;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 16.6px 0 19.7px 0;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .component {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 0.4px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-2 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 0.7px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-3 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 1.1px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-4 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 0.7px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-5 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 0.4px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-6 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 1.1px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-7 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 0.7px 17.1px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-8 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 0.7px 17.1px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-9 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-10 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 19px 17.1px 18.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-11 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.8px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-12 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-13 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.6px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-14 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-15 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 18px 17.1px 17.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-16 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-17 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-18 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 15.7px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-19 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 15.6px 0.4px 15.6px 0;
+    width: 55.2px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-20 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-21 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.8px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-22 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.2px 17.1px 15.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-23 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.2px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-24 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.1px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-25 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16px 17.1px 15.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-26 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.2px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-27 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.4px 17.1px 16.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-28 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.2px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-29 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 16.2px 17.1px 15.1px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-30 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 15.6px 17.1px 14.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .component-31 {
+    border-radius: 39.5px;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16.1px 17.3px 17.1px 16.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .name-day {
+    margin: 0 33.8px 11.8px 30.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 438.9px;
+    box-sizing: border-box;
+}
+
+.property-1-date .mon {
+    margin-right: 9.5px;
+    width: 63.1px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .tue {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .wed {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .thu {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .fri {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .sat {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .sun {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15.8px;
+    color: #CA1C26;
+}
+
+.property-1-date .januari-2023 {
+    margin-right: 17.5px;
+    width: 369.1px;
+    overflow-wrap: break-word;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 23.7px;
+    color: #000000;
+}
+
+.property-1-date .button-1 {
+    border-radius: 15.8px;
+    background: #CA1C26;
+    position: relative;
+    margin-right: 7.9px;
+    display: flex;
+    padding: 8.4px 6.2px 8.3px 10.5px;
+    width: 31.6px;
+    height: 31.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .vector-1 {
+    transform: rotate(45deg);
+    width: 14.9px;
+    height: 14.9px;
+}
+
+.property-1-date .button-2 {
+    border-radius: 15.8px;
+    background: #CA1C26;
+    position: relative;
+    display: flex;
+    padding: 8.4px 10.4px 8.3px 6.3px;
+    width: 31.6px;
+    height: 31.6px;
+    box-sizing: border-box;
+}
+
+.property-1-date .vector-2 {
+    transform: rotate(-135deg);
+    width: 14.9px;
+    height: 14.9px;
+}
+
+.property-1-date .line-1 {
+    background: #DCDCDC;
+    margin-bottom: 15.8px;
+    width: 505px;
+    height: 0.8px;
+}
+
+.property-1-date .frame-34669 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 13px;
+    width: 130px;
+    box-sizing: border-box;
+}
+
+.property-1-date .mask-group-1 {
+    margin: 1.5px 7px 1.5px 0;
+    width: 20px;
+    height: 20px;
+}
+
+.property-1-date .frame-346551 {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.property-1-date .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+}
+
+.property-1-date .frame-1251 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .container {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-1 {
+    margin: 1.6px 0 1.9px 0;
+    display: flex;
+    flex-direction: row;
+    width: 71px;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-2 {
+    margin: 0 24.5px 11.8px 21.3px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 11.8px;
+    width: 457.7px;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-3 {
+    margin: 0 24.5px 11.8px 21.3px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 11.8px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-4 {
+    margin: 0 24.5px 14.7px 21.3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 457.7px;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-5 {
+    margin: 0 21.3px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 11.8px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-6 {
+    margin: 0 24.5px 11.8px 21.3px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 11.8px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .container-7 {
+    margin: 0 24.5px 11.8px 21.3px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 11.8px;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.property-1-date .mask-group-2 {
+    width: 25px;
+    height: 25px;
+}
+
+.property-1-date .container {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-2 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-3 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-4 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-5 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-6 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-7 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-8 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-9 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-10 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-11 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-12 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-13 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-14 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-15 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-16 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-17 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-18 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 19.8px;
+    color: #000000;
+}
+
+.property-1-date .container-19 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-20 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-21 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-22 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-23 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-24 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-25 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-26 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-27 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-28 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-29 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+.property-1-date .container-30 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18.8px;
+    color: #000000;
+}
+
+/*Section - 4*/
+.property-1-plate-4 {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 87px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+  }
+  .property-1-plate-4 .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .frame-34656 {
+    margin: 0 11px 26px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .where-are-you-travelling-from {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-4 .frame-125 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .rectangle-204 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .rectangle-205 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .rectangle-206 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .rectangle-207 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-4 .frame-34635 {
+    border-radius: 7px;
+    border: 0.5px solid #E4E4E4;
+    background: #FFFFFF;
+    margin-bottom: 39px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    padding: 11.5px 0 11.5px 29.5px;
+    width: 705px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .frame-34634 {
+    margin-right: 25px;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .mask-group {
+    width: 25px;
+    height: 25px;
+  }
+  .property-1-plate-4 .frame-34633 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .type-departing-city {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #8A8888;
+  }
+  .property-1-plate-4 .frame-34669 {
+    position: relative;
+    margin-right: 734.8px;
+    display: flex;
+    align-self: center;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .frame-34636 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+
+  .frame-34636 {
+    margin: 18px 0;
+}
+
+  .property-1-plate-4 .jaipur {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34637 {
+    margin: 0 8.9px 31px 0;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .bangalore {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34638 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .delhi {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34639 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .pune {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34640 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .kolkata {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34641 {
+    margin-bottom: 31px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .hyderabad {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34642 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .mumbai {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34643 {
+    margin-bottom: 31px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .indore {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34644 {
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .kochi {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34645 {
+    position: absolute;
+    left: 0px;
+    bottom: -65px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .jibhi {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34646 {
+    position: absolute;
+    right: -31.5px;
+    bottom: -130px;
+    display: flex;
+    height: 34px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .dharamshala {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34647 {
+    position: absolute;
+    left: 0px;
+    bottom: -229px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .sethan-village {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34648 {
+    position: absolute;
+    left: 0px;
+    bottom: -260px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .khajjiar {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34649 {
+    position: absolute;
+    left: 0px;
+    bottom: -325px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .malana {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34650 {
+    position: absolute;
+    left: 0px;
+    bottom: -390px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .sarahan {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34651 {
+    position: absolute;
+    left: 0px;
+    bottom: -455px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .kinnaur {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34652 {
+    position: absolute;
+    left: 0px;
+    bottom: -520px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .keylong {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34653 {
+    position: absolute;
+    left: 0px;
+    bottom: -585px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .chamba {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34670 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .frame-346691 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 13px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .mask-group-1 {
+    margin: 1.5px 7px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-4 .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .frame-34668 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 11.1px 7.5px 8px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .mask-group-2 {
+    margin: 2.5px 7px 2.5px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-4 .frame-346551 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .aug-2024 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-4 .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .container-1 {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-4 .mask-group-3 {
+    width: 25px;
+    height: 25px;
+  }
+
+
+
+
+
+
+
+
+  /* Section-5 */
+
+  .property-1-plate-5 {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 528px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+  }
+  .property-1-plate-5 .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-34656 {
+    margin: 0 11px 69px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .what-is-the-duration-of-your-holiday {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-5 .frame-125 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .rectangle-204 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .rectangle-205 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .rectangle-206 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .rectangle-207 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-5 .frame-34672 {
+    margin: 0 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 35px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-1251 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    display: flex;
+    padding: 68px 0px 68px 0;
+    width: 160px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .property-1-plate-5 .nights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-5 .frame-34657 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(197, 196, 254, 0.21);
+    position: relative;
+    display: flex;
+    padding: 68px 0.8px 68px 0;
+    width: 160px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .property-1-plate-5 .frame-34658 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 159, 165, 0.33);
+    padding: 68px 19.5px;
+    width: 162px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-34659 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: rgba(255, 229, 178, 0.33);
+    position: relative;
+    display: flex;
+    padding: 68px 0.5px 68px 0;
+    width: 160px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .property-1-plate-5 .bookmark {
+    background: url('../assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    width: 30px;
+    height: 30px;
+  }
+  .property-1-plate-5 .bookmark-1 {
+    background: url('../assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  .property-1-plate-5 .frame-346581 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .twonights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-5 .threenights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-5 .frame-346582 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .fournights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-5 .frame-34673 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 10px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-34669 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 13px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .mask-group {
+    margin: 1.5px 14px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-5 .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-5 .frame-34668 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 11.1px 7.5px 8px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .mask-group-1 {
+    margin: 2.5px 7px 2.5px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-5 .frame-346551 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .aug-2024 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-5 .frame-34670 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 8px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .frame-346552 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .pune {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-5 .mask-group-2 {
+    margin: 1.5px 21px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-5 .container {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-5 .mask-group-3 {
+    width: 25px;
+    height: 25px;
+  }
+
+  /*Section-6*/
+
+  .property-1-plate-7 {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 259px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+  }
+  .property-1-plate-7 .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34656 {
+    margin: 0 11px 68px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .who-is-travelling-with-you {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-7 .frame-34674 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 10px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34669 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 13px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group {
+    margin: 1.5px 14px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-7 .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-7 .frame-34668 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 11.1px 7.5px 8px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-1 {
+    margin: 2.5px 7px 2.5px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-7 .frame-346551 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .aug-2024 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-7 .frame-34670 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 8px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-2 {
+    margin: 1.5px 21px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-7 .frame-346552 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .pune {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-7 .frame-34671 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 9px 10.5px 9px 8px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-3 {
+    margin: 1px 8px 1px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-7 .frame-346553 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .onenights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-7 .frame-125 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .rectangle-204 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .rectangle-205 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .rectangle-206 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .rectangle-207 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-7 .frame-34672 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 35px;
+    width: 665px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-1251 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+  }
+  .property-1-plate-7 .frame-346741 {
+    border-radius: 40px;
+    border: 1px solid #010080;
+    margin-bottom: 16px;
+    display: flex;
+    padding: 9px;
+    width: 61px;
+    height: 61px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-4 {
+    width: 41px;
+    height: 41px;
+  }
+  .property-1-plate-7 .frame-1252 {
+    margin-right: 0.1px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .solo {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #010080;
+  }
+  .property-1-plate-7 .frame-34657 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    padding: 29px 0 32px 0;
+    width: 140px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34675 {
+    border-radius: 40px;
+    border: 1px solid #CA1C26;
+    margin-bottom: 16px;
+    display: flex;
+    padding: 9px;
+    width: 61px;
+    height: 61px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-5 {
+    width: 41px;
+    height: 41px;
+  }
+  .property-1-plate-7 .frame-34658 {
+    margin: 0 4px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .couple {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #CA1C26;
+  }
+  .property-1-plate-7 .bookmark {
+    background: url('../assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  .property-1-plate-7 .frame-346581 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+  }
+  .property-1-plate-7 .frame-34676 {
+    border-radius: 40px;
+    border: 1px solid #E0AF00;
+    margin-bottom: 16px;
+    display: flex;
+    padding: 9px;
+    width: 61px;
+    height: 61px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-6 {
+    width: 41px;
+    height: 41px;
+  }
+  .property-1-plate-7 .frame-346582 {
+    margin-right: 0.5px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .family {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #E0AF00;
+  }
+  .property-1-plate-7 .frame-34659 {
+    border-radius: 6px;
+    border: 1px solid rgba(202, 28, 38, 0.12);
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    padding: 29px 0 32px 0;
+    width: 140px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34677 {
+    border-radius: 40px;
+    border: 1px solid #814500;
+    margin-bottom: 16px;
+    display: flex;
+    padding: 9px;
+    width: 61px;
+    height: 61px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-7 {
+    width: 41px;
+    height: 41px;
+  }
+  .property-1-plate-7 .frame-346583 {
+    margin: 0 7.3px 0 7px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .group {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #814500;
+  }
+  .property-1-plate-7 .bookmark-1 {
+    background: url('../assets/images/bookmark.png') 50% / cover no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    width: 30px;
+    height: 30px;
+  }
+  .how-many-of-you-are-travelling-number-of-rooms {
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    line-height: 1.333;
+    text-transform: capitalize;
+    color: #373A3B;
+  }
+  .how-many-of-you-are-travelling-number-of-rooms-sub22 {
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.4px;
+    line-height: 1.333;
+    text-transform: capitalize;
+  }
+  .property-1-plate-7 .how-many-of-you-are-travelling-number-of-rooms {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-7 .frame-34679 {
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .continue {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    font-variant: small-caps;
+    color: #FFFFFF;
+  }
+  .property-1-plate-7 .frame-34683 {
+    border-radius: 8px;
+    background: #CA1C26;
+    display: flex;
+    padding: 13px 12.9px 13px 0;
+    width: 208px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34687 {
+    margin: 0 1px 79px 1px;
+    display: flex;
+    align-self: flex-start;
+    width: 361px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34688 {
+    display: flex;
+    align-self: center;
+    width: 208px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .container-1 {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .container-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .mask-group-8 {
+    width: 25px;
+    height: 25px;
+  }
+  .property-1-plate-7 .enter {
+    border-radius: 5px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 9px 10px 9px 20px;
+    width: 361px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .frame-34678 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-7 .room-2-adults {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: #51524A;
+  }
+  .property-1-plate-7 .mask-group-9 {
+    margin: 2.5px 0;
+    width: 15px;
+    height: 15px;
+  }
+
+
+
+
+
+
+  /*Section-7*/
+
+
+  .property-1-plate-9 {
+    background: url('../assets/images/iphone_1415_pro_max_1.jpeg') 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 29px 32px 410px 92px;
+    width: 1081px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-34654 {
+    margin-top: 48px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .now-planning-your-holiday-to {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #1B1B1B;
+  }
+  .property-1-plate-9 .frame-34632 {
+    border-radius: 44px;
+    background: #FADDDD;
+    margin-bottom: 23px;
+    display: flex;
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-34656 {
+    margin: 0 11px 42px 11px;
+    display: flex;
+    align-self: flex-start;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .enter-your-details-to-personalise-your-trip {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-9 .frame-34674 {
+    margin: 0 1px 20px 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 10px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-34669 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 13px;
+    min-width: 133px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .mask-group {
+    margin: 1.5px 14px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .frame-34655 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .manali {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-9 .frame-34668 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 11.1px 7.5px 8px;
+    box-sizing: border-box;
+    min-width: 133px;
+    justify-content: center;
+  }
+  .property-1-plate-9 .mask-group-1 {
+    margin: 2.5px 7px 2.5px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-9 .frame-346551 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .aug-2024 {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-9 .frame-34670 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px 0 7.5px 8px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .mask-group-2 {
+    margin: 1.5px 8px 1.5px 0;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .frame-346552 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .pune {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #171717;
+  }
+  .property-1-plate-9 .frame-34671 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 9px 10.5px 9px 8px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .mask-group-3 {
+    margin: 1px 8px 1px 0;
+    width: 18px;
+    height: 18px;
+  }
+  .property-1-plate-9 .frame-346553 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .nights {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-9 .frame-125 {
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    column-gap: 7px;
+    width: 839px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .rectangle-203 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .rectangle-204 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .rectangle-205 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .rectangle-206 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .rectangle-207 {
+    background: #CA1C26;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .rectangle-2071 {
+    background: #FCBFC2;
+    width: 134px;
+    height: 6px;
+  }
+  .property-1-plate-9 .frame-34683 {
+    border-radius: 8px;
+    background: #CA1C26;
+    display: flex;
+    align-self: flex-start;
+    padding: 13px 6px 13px 0;
+    width: 179px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .submit {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    border-radius: 8px;
+    background: #CA1C26;
+    padding: 10px 6px 10px 0;
+    box-sizing: border-box;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .property-1-plate-9 .frame-34672 {
+    border-radius: 5px;
+    border: 1px solid rgba(202, 28, 38, 0.33);
+    display: flex;
+    flex-direction: row;
+    padding: 9px 0 9px 8px;
+    width: 130px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-346554 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .pax {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+  .property-1-plate-9 .mask-group-4 {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .frame-34635 {
+    border-radius: 7px;
+    border: 0.5px solid #E4E4E4;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14.5px 0 14.5px 29.5px;
+    width: 389px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-34634 {
+    margin: 2px 0;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-34633 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .name {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    color: #000;
+    border: none;
+  }
+  .property-1-plate-9 .mask-group-5 {
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .frame-34684 {
+    border-radius: 7px;
+    border: 0.5px solid #E4E4E4;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14.5px 0 14.5px 29.5px;
+    width: 389px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-346341 {
+    margin: 2px 0;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-346331 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .phone-no {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    color: #000;
+    border: none;
+  }
+  .property-1-plate-9 .frame-34685 {
+    border-radius: 7px;
+    border: 0.5px solid #E4E4E4;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14.5px 0 14.5px 29.5px;
+    width: 389px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-346342 {
+    margin: 2px 0;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-346332 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .email-id {
+    overflow-wrap: break-word;
+    font-family: 'Merriweather Sans';
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    color: #000;
+    border: none;
+  }
+  .property-1-plate-9 .mask-group-6 {
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .mask-group-7 {
+    width: 20px;
+    height: 20px;
+  }
+  .property-1-plate-9 .frame-1251 {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 389px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .frame-1252 {
+    margin: 0 1px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 389px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .container {
+    margin: 0 0 25px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 956px;
+    box-sizing: border-box;
+  }
+  .property-1-plate-9 .mask-group-8 {
+    width: 25px;
+    height: 25px;
+  }

@@ -1,0 +1,155 @@
+<template>
+    <div class="">
+        <footer class="footer">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="col-md-2 footer-logo">
+                        <img src="@/assets/images/whats_app_image_20240503_at_14072.png" alt="Logo">
+                    </div>
+                    <div class="row text-md-start footer-links">
+                        <div class="col-md-2">
+                            <h5>ABOUT TGE</h5>
+                            <a href="#">About us</a>
+                            <a href="#">Support</a>
+                            <a href="#">Copyright Policies</a>
+                            <a href="#">Privacy</a>
+                        </div>
+                        <div class="col-md-2">
+                            <h5>IMPORTANT LINK</h5>
+                            <a href="#">Refund Policy</a>
+                            <a href="#">Teams & Conditions</a>
+                            <a href="#">Posts</a>
+                        </div>
+                        <div class="col-md-3 contact-info">
+                            <h5>CONTACT US</h5>
+                            <a href="tel:+916753557043">
+                                <img class="ftrLink" src="@/assets/images/foter-call.png" />
+                                +91 67535 57043</a>
+                            <a href="mailto:tourwithtge23@gmail.com">
+                                <img class="ftrLink" src="@/assets/images/foter-msg.png" />
+                                tourwithtge23@gmail.com</a>
+                            <div class="social-icons">
+                                <a href="#"><img class="ftrIcons" src="@/assets/images/facebook.png" /></a>
+                                <a href="#"><img class="ftrIcons" src="@/assets/images/insta.png" /></a>
+                                <a href="#"><img class="ftrIcons" src="@/assets/images/YOUTUBE.png" /></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Travel Destinations</h5>
+                            <div class="row g-2">
+                                <div class="col-4 topRow">
+                                    <img src="@/assets/images/beaches.png" alt="Beaches">
+                                </div>
+                                <div class="col-4 topRow">
+                                    <img src="@/assets/images/bali.png" alt="Bali">
+                                </div>
+                                <div class="col-4 topRow">
+                                    <img src="@/assets/images/prague.png" alt="Prague">
+                                </div>
+                                <div class="col-4">
+                                    <img src="@/assets/images/usa.png" alt="USA">
+                                </div>
+                                <div class="col-4">
+                                    <img src="@/assets/images/china.png" alt="China">
+                                </div>
+                                <div class="col-4">
+                                    <img src="@/assets/images/paris.png" alt="Paris">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <div class="col-12">
+                            <p>© 2024 TGE ALL RIGHTS RESERVED.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.wrapper {
+    width: 1200px;
+    margin: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.footer-logo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-image: url('https://s3-alpha-sig.figma.com/img/2965/7764/0a3e0b4597a332c095c75b6b90cb7c2c?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oRcrbVe0ulU3zMjhPh9vdIF~48PcQyO2tHOrz7AzVmi1S8KpqBHXKC~RdDoULiLkC4sQnu35hmJ-8PLQYEs2B4x~hp7K-gqNVRdWGhn7OkhKLmP2zZMCfwx7HzNF~6dLKsJx~DqQHr-PCsKuLw9rqD09UR0TR1bpQ0WnmH0nuCasf2HCt3KDxnyqNNygehH2oceyQQxF6iUPbTnJ8oC7A6Qyo~7maU33bSohIzP50mOhUqaLAgdLoHdK4GW16xkHx4kb2LyReRZZzoo-zD3Zve~S5lZRHaJ53uqy2NiVNtbgOhZAEo9J~a2qUw1kfOkepNCEobGV2uPwCbkbjtb38g__');
+    padding: 30px;
+}
+
+.footer img {
+    width: 89px;
+}
+
+img.ftrLink {
+    width: 25px !important;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+img.ftrIcons {
+    width: 30px !important;
+}
+
+.topRow {
+    margin-bottom: -20px;
+}
+
+.footer h5 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #000000b8;
+    font-size: 18px;
+}
+
+.footer a {
+    display: block;
+    margin-bottom: 5px;
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer .contact-info a {
+    color: #000;
+    font-weight: 700;
+}
+
+.footer .social-icons a {
+    margin-right: 15px;
+    color: #6c757d;
+}
+
+.footer .social-icons a:hover {
+    color: #343a40;
+}
+
+.footer .travel-destinations img {
+    width: 100%;
+    height: auto;
+}
+</style>

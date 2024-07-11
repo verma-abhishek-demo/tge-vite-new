@@ -1,0 +1,13 @@
+export default {
+    mounted() {
+        this.addAnimationDelays();
+    },
+    methods: {
+        addAnimationDelays() {
+            const slideUpElements = document.querySelectorAll('.slideUpOne .custom-img');
+            slideUpElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 3}s`; // Adjust delay as needed
+            });
+        }
+    }
+}
