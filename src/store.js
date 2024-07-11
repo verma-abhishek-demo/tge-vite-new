@@ -76,17 +76,18 @@ const store = createStore({
         },
         async fetchCitySlugData({commit}) {
             try {
-                const response = await fetch(`${baseURL}/apis/packages/package_with_city`);
+                const response = await fetch(`${baseURL}/apis/packages/typePacakge/2`);
                 const { data } = await response.json();
                 commit('setCitySlugData', data)
             } catch (error) {
                 commit('setError', error);
             }
         },
-        async fetchSearchCity({commit}) {
+        async fetchSearchCity({commit}, query) {
             try {
-                const response = await fetch(`${baseURL}/apis/packages/search_filter_packages`);
+                const response = await fetch(`${baseURL}/apis/packages/city/${query}`);
                 const { data } = await response.json();
+                console.log('mer naam', data);
                 commit('setSearchCity', data);
             } catch (error) {
                 commit('setError', error);

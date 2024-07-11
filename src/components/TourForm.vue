@@ -2,15 +2,20 @@
     <div class="tourform">
         <form @submit.prevent="submitForm" class="t-form">
             <div class="fieldOne">
-                <input placeholder="Search For Destinations..." class="citySearch" type="text" v-model="inputSearch" />
+                <input placeholder="Search For Destinations..." class="citySearch" type="text" v-model="inputSearch"
+                    @input="onInput" />
+                
+                <ul v-if="searchResults && searchResults.length > 2" class="city-list">
+                    <li @click="selectedCity(city.name, city.id)" class="listCity" v-for="city in searchResults" :key="city.id">
+                        {{ city.name }}</li>
+                </ul>
             </div>
             <div class="fieldTwo">
                 <p>Trip Durations</p>
                 <div class="durationBtn">
-                    <SelectButton v-model="tripValue" :options="duration" optionLabel="name" />
+                    <SelectButton @change="onTripValueChange" v-model="tripValue" :options="duration" optionLabel="name" />
                 </div>
             </div>
-
             <div class="fieldthree">
                 <p>Price Range</p>
                 <div class="pricerange">
@@ -19,7 +24,6 @@
                         v-model="selectedValue">
                 </div>
             </div>
-
             <div class="fieldFive">
                 <button type="submit" class="searchBtn">Search for Trip</button>
             </div>
@@ -29,30 +33,26 @@
 
 <script>
 import SelectButton from 'primevue/selectbutton';
-import Checkbox from 'primevue/checkbox';
 import { mapActions, mapGetters } from 'vuex';
+import { baseURL } from '@/config';
+import axios from 'axios';
 export default {
     components: {
         SelectButton,
-        Checkbox,
     },
     computed: {
         ...mapGetters(['getSearchCity']),
     },
     data() {
         return {
-            value: null,
             tripValue: null,
             selectedValue: 0,
             minPriceValue: 1000,
             maxPriceValue: 100000,
             inputSearch: '',
-            flight: null,
+            cityId: '',
+            searchResults: [],
             showForm: true,
-            options: [
-                { name: 'Tour', value: 1 },
-                { name: 'Activities', value: 2 },
-            ],
             duration: [
                 { name: 'Upto 1 day', value: 'one day' },
                 { name: '2 to 3 dyas', value: 'two to three days' },
@@ -63,16 +63,60 @@ export default {
     },
     methods: {
         ...mapActions(['fetchSearchCity']),
+        async onInput() {
+            console.log('jaiShriRam', this.getSearchCity);
+            if (this.inputSearch.length > 2) {
+                await this.fetchSearchCity(this.inputSearch);
+                //console.log('ajncjncjk', result);
+                this.searchResults = this.getSearchCity;
+            }
+        },
+        selectedCity(city, id) {
+            this.inputSearch = city;
+            this.cityId = id;
+            this.searchResults = [];
+
+        },
         toggleForm() {
             this.showForm = !this.showForm;
+        },
+        onTripValueChange(value) {
+            this.tripValue = value.value.value;
+        },
+        async submitForm() {
+            const formData = {
+                category_id: '',
+                city_id: this.cityId,
+                duration: this.tripValue,
+                minPrice: this.minPriceValue,
+                maxPrice: this.selectedValue,
+                productType: ''
+            }
+            const enquiryFormData = new FormData();
+            for(const key in formData) {
+                enquiryFormData.append(key, formData[key]);
+            }
+            try {
+                await axios.post(`${baseURL}/apis/packages/search_filter_packages`, enquiryFormData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((response) => {
+                    console.log('enquiryData', response);
+                    alert('Success!!!');
+                })
+            } catch (error) {
+                console.log('Error', error);
+            }
         }
     },
-    async submitForm() {
-        
-    },
+
+
     async created() {
-        console.log('jaiShriRam', this.getSearchCity);
         await this.fetchSearchCity();
+        console.log('Input Search:', this.inputSearch);
+        console.log('Trip Value:', this.tripValue);
+        console.log('Selected Value:', this.selectedValue);
     }
 
 }
@@ -87,6 +131,7 @@ input.citySearch {
     border: none;
     width: 700px;
     padding: 13px 0;
+    background: transparent;
 }
 
 input.citySearch:focus {
@@ -118,6 +163,16 @@ input#customSlider {
 form.t-form {
     padding: 50px;
     text-align: left;
+}
+
+ul.city-list {
+    margin-left: -32px;
+}
+
+li.listCity {
+    list-style: none;
+    font-size: 18px;
+    line-height: 31px;
 }
 
 h1 {
@@ -185,67 +240,104 @@ button.searchBtn {
 }
 
 input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    -webkit-appearance: none;
+    /* Remove default styling in WebKit browsers */
     width: 100%;
-    height: 0px; /* Adjust the height of the track */
-    background: #fff; /* Track color */
-    border-radius: 5px; /* Round the track */
-    outline: none; /* Remove default outline */
-    opacity: 0.7; /* Optional: Adjust the transparency of the slider */
-    transition: opacity .15s ease-in-out; /* Optional: Smooth transition */
+    height: 0px;
+    /* Adjust the height of the track */
+    background: #fff;
+    /* Track color */
+    border-radius: 5px;
+    /* Round the track */
+    outline: none;
+    /* Remove default outline */
+    opacity: 0.7;
+    /* Optional: Adjust the transparency of the slider */
+    transition: opacity .15s ease-in-out;
+    /* Optional: Smooth transition */
 }
 
 input[type="range"]:hover {
-    opacity: 1; /* Full opacity on hover */
+    opacity: 1;
+    /* Full opacity on hover */
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
-    width: 16px; /* Width of the thumb */
-    height: 16px; /* Height of the thumb */
-    background: #f00; /* Thumb color */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%; /* Round the thumb */
-    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+    -webkit-appearance: none;
+    /* Remove default styling in WebKit browsers */
+    width: 16px;
+    /* Width of the thumb */
+    height: 16px;
+    /* Height of the thumb */
+    background: #f00;
+    /* Thumb color */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+    /* Round the thumb */
+    border: 2px solid #fff;
+    /* Optional: Add a border around the thumb */
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 16px; /* Width of the thumb */
-    height: 16px; /* Height of the thumb */
-    background: #f00; /* Thumb color */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%; /* Round the thumb */
-    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+    width: 16px;
+    /* Width of the thumb */
+    height: 16px;
+    /* Height of the thumb */
+    background: #f00;
+    /* Thumb color */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+    /* Round the thumb */
+    border: 2px solid #fff;
+    /* Optional: Add a border around the thumb */
 }
 
 input[type="range"]::-ms-thumb {
-    width: 16px; /* Width of the thumb */
-    height: 16px; /* Height of the thumb */
-    background: #f00; /* Thumb color */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%; /* Round the thumb */
-    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+    width: 16px;
+    /* Width of the thumb */
+    height: 16px;
+    /* Height of the thumb */
+    background: #f00;
+    /* Thumb color */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+    /* Round the thumb */
+    border: 2px solid #fff;
+    /* Optional: Add a border around the thumb */
 }
 
 /* Custom color for the progress bar */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #fff; /* Track color */
-    height: 8px; /* Height of the track */
-    border-radius: 5px; /* Round the track */
+    background: #fff;
+    /* Track color */
+    height: 8px;
+    /* Height of the track */
+    border-radius: 5px;
+    /* Round the track */
 }
 
 input[type="range"]::-moz-range-track {
-    background: #ddd; /* Track color */
-    height: 16px; /* Height of the track */
-    border-radius: 5px; /* Round the track */
+    background: #ddd;
+    /* Track color */
+    height: 16px;
+    /* Height of the track */
+    border-radius: 5px;
+    /* Round the track */
 }
 
 input[type="range"]::-ms-track {
-    background: #ddd; /* Track color */
-    height: 16px; /* Height of the track */
-    border-radius: 5px; /* Round the track */
-    border: none; /* Remove default border */
-    color: transparent; /* Transparent color */
+    background: #ddd;
+    /* Track color */
+    height: 16px;
+    /* Height of the track */
+    border-radius: 5px;
+    /* Round the track */
+    border: none;
+    /* Remove default border */
+    color: transparent;
+    /* Transparent color */
 }
-
 </style>

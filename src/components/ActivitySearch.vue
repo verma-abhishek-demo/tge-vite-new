@@ -1,11 +1,13 @@
 <template>
     <div class="location">
+        <form @submit.prevent="submitForm">
         <b-container class="bv-example-row">
             <b-row class="activitySec">
                 <b-col>
                     <div class="loc">
                         <img src="@/assets/images/loca.png" />
-                        <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Location" />
+                        <Dropdown @change="onCityChange" v-model="selectedCity" :options="cities" optionLabel="name"
+                            placeholder="Location" />
                     </div>
                 </b-col>
                 <b-col>
@@ -19,44 +21,47 @@
                         <img src="@/assets/images/bag.png" />
                         <p>No. of person</p>
                     </div>
-                    
+
                 </b-col>
                 <b-col>
                     <div class="btnSrch">
-                        <button class="srchBtn">Search Now</button>
+                        <button type="submit" class="srchBtn">Search Now</button>
                     </div>
                 </b-col>
-                
+
             </b-row>
             <div v-if="showCounter" class="personCounter">
-                        <div class="Row">
-                            <p>Adult</p>
-                            <div class="counter">
-                                <span @click="decreaseCounter" :class="{ disabled: adultcounter === 0 }"
-                                    :disabled="adultcounter === 0" class="sizeCntr">-</span>
-                                <span>{{ adultcounter }}</span>
-                                <span @click="increaseCounter" :class="{ disabled: adultcounter === 3 }"
-                                    :disabled="adultcounter === 3" class="sizeCntr">+</span>
-                            </div>
-                        </div>
-                        <div class="Row">
-                            <p>Children</p>
-                            <div class="counter">
-                                <span @click="decreaseChildCounter" :class="{ disabled: childcounter === 0 }" 
-                                :disabled="childcounter === 0" class="sizeCntr">-</span>
-                                <span>{{ childcounter }}</span>
-                                <span @click="increaseChildCounter" :class="{ disabled: childcounter === 3 }" 
-                                :disabled="childcounter === 3" class="sizeCntr">+</span>
-                            </div>
-                        </div>
+                <div class="Row">
+                    <p>Adult</p>
+                    <div class="counter">
+                        <span @click="decreaseCounter" :class="{ disabled: adultcounter === 0 }"
+                            :disabled="adultcounter === 0" class="sizeCntr">-</span>
+                        <span>{{ adultcounter }}</span>
+                        <span @click="increaseCounter" :class="{ disabled: adultcounter === 3 }"
+                            :disabled="adultcounter === 3" class="sizeCntr">+</span>
                     </div>
+                </div>
+                <div class="Row">
+                    <p>Children</p>
+                    <div class="counter">
+                        <span @click="decreaseChildCounter" :class="{ disabled: childcounter === 0 }"
+                            :disabled="childcounter === 0" class="sizeCntr">-</span>
+                        <span>{{ childcounter }}</span>
+                        <span @click="increaseChildCounter" :class="{ disabled: childcounter === 3 }"
+                            :disabled="childcounter === 3" class="sizeCntr">+</span>
+                    </div>
+                </div>
+            </div>
         </b-container>
+    </form>
     </div>
 </template>
 
 <script>
 import Dropdown from 'primevue/dropdown';
 import Calendar from 'primevue/calendar';
+import { baseURL } from '@/config';
+import axios from 'axios';
 export default {
     components: {
         Dropdown,
@@ -101,6 +106,37 @@ export default {
         },
         toggleCounter() {
             this.showCounter = !this.showCounter;
+        },
+        onCityChange(value) {
+            this.selectedCity = value.value.name;
+        },
+        async submitForm() {
+            const formData = {
+                location: this.selectedCity,
+                adults: this.adultcounter,
+                child: this.childcounter
+            }
+            const enquiryFormData = new FormData();
+            for (const key in formData) {
+                enquiryFormData.append(key, formData[key]);
+            }
+            try {
+                await axios.post(`${baseURL}/apis/packages/activities_filter`, enquiryFormData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((response) => {
+                    console.log('enquiryData', response);
+                    alert('Success!!!');
+                })
+            } catch (error) {
+                console.error('ERROR', error);
+            }
+
+            this.selectedCity = '';
+            this.adultcounter = 0;
+            this.childcounter = 0;
+            this.selectedDate = '';
         }
     }
 }
