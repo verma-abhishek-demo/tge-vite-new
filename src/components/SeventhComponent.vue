@@ -79,7 +79,7 @@ export default {
 
 .section-seven[data-v-d0c226b0] {
     background-color: #1a1a2e;
-    background-image: url(/src/assets/images/seventh-bg.png);
+    background-image: url(@/assets/images/seventh-bg.png);
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 18%;

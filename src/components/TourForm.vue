@@ -1,13 +1,8 @@
 <template>
     <div class="tourform">
-        <form class="t-form">
-            <h1>Search For Destinations...</h1>
+        <form @submit.prevent="submitForm" class="t-form">
             <div class="fieldOne">
-                <p>Product Type</p>
-                <dv class="typebtn">
-                    <SelectButton v-model="value" :options="options" optionLabel="name" multiple
-                        aria-labelledby="multiple" />
-                </dv>
+                <input placeholder="Search For Destinations..." class="citySearch" type="text" v-model="inputSearch" />
             </div>
             <div class="fieldTwo">
                 <p>Trip Durations</p>
@@ -23,31 +18,10 @@
                     <input type="range" id="customSlider" :min="minPriceValue" :max="maxPriceValue" step="1000"
                         v-model="selectedValue">
                 </div>
-                <div class="rangeFlex">
-                    <div class="min-range">
-                        <span class="max-text">MIN</span>
-                        <span class="price-text">INR {{ minPriceValue }}</span>
-                    </div>
-                    <div class="min-range">
-                        <span class="max-text">MAX</span>
-                        <span class="price-text">INR {{ maxPriceValue }}</span>
-                    </div>
-                    <div class="min-range">
-                        <span class="max-text">YOUR PRICE</span>
-                        <span class="price-text">INR {{ selectedValue }}</span>
-                    </div>
-                </div>
-
-            </div>
-            <div class="fieldFour">
-                <div class="flex items-center">
-                    <Checkbox v-model="flight" inputId="ingredient1" name="flight" value="flight" />
-                    <label for="ingredient1" class="ml-2"> I want flights to be included. </label>
-                </div>
             </div>
 
             <div class="fieldFive">
-                <button class="searchBtn">Search for Trip</button>
+                <button type="submit" class="searchBtn">Search for Trip</button>
             </div>
         </form>
     </div>
@@ -56,10 +30,14 @@
 <script>
 import SelectButton from 'primevue/selectbutton';
 import Checkbox from 'primevue/checkbox';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     components: {
         SelectButton,
         Checkbox,
+    },
+    computed: {
+        ...mapGetters(['getSearchCity']),
     },
     data() {
         return {
@@ -68,6 +46,7 @@ export default {
             selectedValue: 0,
             minPriceValue: 1000,
             maxPriceValue: 100000,
+            inputSearch: '',
             flight: null,
             showForm: true,
             options: [
@@ -83,10 +62,19 @@ export default {
         }
     },
     methods: {
+        ...mapActions(['fetchSearchCity']),
         toggleForm() {
             this.showForm = !this.showForm;
         }
+    },
+    async submitForm() {
+        
+    },
+    async created() {
+        console.log('jaiShriRam', this.getSearchCity);
+        await this.fetchSearchCity();
     }
+
 }
 </script>
 
@@ -95,7 +83,20 @@ export default {
     background: red;
 }
 
+input.citySearch {
+    border: none;
+    width: 700px;
+    padding: 13px 0;
+}
 
+input.citySearch:focus {
+    border: none;
+    outline: none;
+}
+
+input#customSlider {
+    width: 700px;
+}
 
 .typebtn>>>.p-togglebutton.p-togglebutton-checked::before {
     background: rgb(84, 100, 98) !important;
@@ -110,7 +111,7 @@ export default {
 
 .tourform {
     width: 800px;
-    background: #fff;
+    background: rgb(246 246 246);
     border-radius: 20px 20px 0 0;
 }
 
@@ -182,4 +183,69 @@ button.searchBtn {
 .fieldFive {
     text-align: right;
 }
+
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    width: 100%;
+    height: 0px; /* Adjust the height of the track */
+    background: #fff; /* Track color */
+    border-radius: 5px; /* Round the track */
+    outline: none; /* Remove default outline */
+    opacity: 0.7; /* Optional: Adjust the transparency of the slider */
+    transition: opacity .15s ease-in-out; /* Optional: Smooth transition */
+}
+
+input[type="range"]:hover {
+    opacity: 1; /* Full opacity on hover */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+    background: #f00; /* Thumb color */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Round the thumb */
+    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+    background: #f00; /* Thumb color */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Round the thumb */
+    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+}
+
+input[type="range"]::-ms-thumb {
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+    background: #f00; /* Thumb color */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Round the thumb */
+    border: 2px solid #fff; /* Optional: Add a border around the thumb */
+}
+
+/* Custom color for the progress bar */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #fff; /* Track color */
+    height: 8px; /* Height of the track */
+    border-radius: 5px; /* Round the track */
+}
+
+input[type="range"]::-moz-range-track {
+    background: #ddd; /* Track color */
+    height: 16px; /* Height of the track */
+    border-radius: 5px; /* Round the track */
+}
+
+input[type="range"]::-ms-track {
+    background: #ddd; /* Track color */
+    height: 16px; /* Height of the track */
+    border-radius: 5px; /* Round the track */
+    border: none; /* Remove default border */
+    color: transparent; /* Transparent color */
+}
+
 </style>

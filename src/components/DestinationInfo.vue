@@ -87,7 +87,7 @@ export default {
         ThirdContent
     },
     computed: {
-        ...mapGetters(['getCityData',,'getData', 'getError']),
+        ...mapGetters(['getCityData','getData', 'getError']),
         cityInfo() {
             const citySlug = this.$route.params.citySlug;
             return citySlug;
@@ -111,9 +111,6 @@ export default {
     },
     mounted() {
         this.animateSlides(1);
-        //console.log('2325', this.cityNames)
-        //console.log('232524', this.$route.params.citySlug)
-
     },
     methods: {
         ...mapActions(['fetchCityData', 'fetchData']),

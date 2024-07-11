@@ -360,6 +360,7 @@
 <script>
 import ThirdContent from './ThirdContent.vue';
 import TotalPackages from './TotalPackages.vue';
+import TripPackage from './TripPackage.vue';
 import { mapActions, mapGetters } from 'vuex';
 import { baseURL } from '@/config';
 import axios from 'axios';
@@ -367,7 +368,8 @@ import axios from 'axios';
 export default {
     components: {
         ThirdContent,
-        TotalPackages
+        TotalPackages,
+        TripPackage
     },
     computed: {
         ...mapGetters(['getpackageData', 'getError']),

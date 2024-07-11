@@ -8,6 +8,8 @@ const store = createStore({
             packageData: [],
             cityData: [],
             trendDest: [],
+            citySlugData: [],
+            searchCity: [],
             error: null
         }
     },
@@ -23,6 +25,12 @@ const store = createStore({
         },
         setTrendDest(state, payload) {
             state.trendDest = payload;
+        },
+        setCitySlugData(state, payload) {
+            state.citySlugData = payload;
+        },
+        setSearchCity(state, payload) {
+            state.searchCity = payload;
         },
         setError(state, payload) {
             state.error = payload;
@@ -63,9 +71,28 @@ const store = createStore({
                 const { data } = await response.json();
                 commit('setTrendDest', data)
             } catch (error) {
-                commit('setErrro', error);
+                commit('setError', error);
+            }
+        },
+        async fetchCitySlugData({commit}) {
+            try {
+                const response = await fetch(`${baseURL}/apis/packages/package_with_city`);
+                const { data } = await response.json();
+                commit('setCitySlugData', data)
+            } catch (error) {
+                commit('setError', error);
+            }
+        },
+        async fetchSearchCity({commit}) {
+            try {
+                const response = await fetch(`${baseURL}/apis/packages/search_filter_packages`);
+                const { data } = await response.json();
+                commit('setSearchCity', data);
+            } catch (error) {
+                commit('setError', error);
             }
         }
+
     },
     getters: {
         getData(state) {
@@ -79,6 +106,12 @@ const store = createStore({
         },
         getTrendDest(state) {
             return state.trendDest;
+        },
+        getCitySlugData(state) {
+            return state.citySlugData;
+        },
+        getSearchCity(state) {
+            return state.searchCity;
         },
         getError(state) {
             return state.error;
