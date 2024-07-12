@@ -164,7 +164,7 @@ h1 {
   place-items: center;
 }
 
-p.travelText[data-v-a47ec4a7] {
+p.travelText {
   color: #fff;
   font-size: 19px;
   font-family: 'Merriweather', sans-serif;
