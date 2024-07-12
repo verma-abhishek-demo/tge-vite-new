@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { baseURL } from '@/config';
+import axios from 'axios';
 
 const store = createStore({
     state() {
@@ -7,9 +8,9 @@ const store = createStore({
             data: null,
             packageData: [],
             cityData: [],
-            trendDest: [],
             citySlugData: [],
             searchCity: [],
+            trendPackage: [],
             error: null
         }
     },
@@ -23,14 +24,14 @@ const store = createStore({
         setCityData(state, payload) {
             state.cityData = payload;
         },
-        setTrendDest(state, payload) {
-            state.trendDest = payload;
-        },
         setCitySlugData(state, payload) {
             state.citySlugData = payload;
         },
         setSearchCity(state, payload) {
             state.searchCity = payload;
+        },
+        setTrendPackage(state, payload) {
+            state.trendPackage = payload;
         },
         setError(state, payload) {
             state.error = payload;
@@ -65,20 +66,14 @@ const store = createStore({
                 commit('setError', error);
             }
         },
-        async fetchTrendingDestination({commit}) {
+        async fetchCitySlugData({commit}, citySlug) {
             try {
-                const response = await fetch(`${baseURL}/apis/packages/trending_destinations`);
+                const response = await fetch(`${baseURL}/apis/packages/package_with_city`);
                 const { data } = await response.json();
-                commit('setTrendDest', data)
-            } catch (error) {
-                commit('setError', error);
-            }
-        },
-        async fetchCitySlugData({commit}) {
-            try {
-                const response = await fetch(`${baseURL}/apis/packages/typePacakge/2`);
-                const { data } = await response.json();
-                commit('setCitySlugData', data)
+                console.log('verAAA', data);
+                const filteredData = data.data.filter(item => item.citySlug == citySlug);
+                console.log('vermaAbhi', filteredData);
+                commit('setCitySlugData', filteredData);
             } catch (error) {
                 commit('setError', error);
             }
@@ -91,6 +86,15 @@ const store = createStore({
                 commit('setSearchCity', data);
             } catch (error) {
                 commit('setError', error);
+            }
+        },
+        async fetchTrendPackage({commit}) {
+            try {
+                const resposne = await axios.get(`${baseURL}/apis/packages/package_tranding_tge`);
+                const { data } = resposne.data;
+                commit('setTrendPackage', data);
+            } catch (error) {
+                this.commit('setError', error);
             }
         }
 
@@ -105,14 +109,14 @@ const store = createStore({
         getCityData(state) {
             return state.cityData;
         },
-        getTrendDest(state) {
-            return state.trendDest;
-        },
         getCitySlugData(state) {
             return state.citySlugData;
         },
         getSearchCity(state) {
             return state.searchCity;
+        },
+        getTrendPackage(state) {
+            return state.trendPackage;
         },
         getError(state) {
             return state.error;

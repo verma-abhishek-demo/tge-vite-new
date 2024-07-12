@@ -10,34 +10,15 @@
                     </div>
 
                     <div class="container mt-5">
-                        <router-link to="/destination_info">
-                            <div class="trip-section showBg-1">
+                        <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
+                            v-for="trip in topPackages" :key="trip">
+                            <div class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
                                 <div class="trip-text">
-                                    <div class="trip-subtitle">The Cultural Trip</div>
-                                    <div class="trip-title">Karela</div>
+                                    <div class="trip-subtitle"></div>
+                                    <div class="trip-title">{{ trip.name }}</div>
                                 </div>
                             </div>
                         </router-link>
-
-                        <router-link to="/destination_info">
-                            <div class="trip-section showBg-2">
-                                <div class="trip-text">
-                                    <div class="trip-subtitle">The Cultural Trip</div>
-                                    <div class="trip-title">Ladakh</div>
-                                </div>
-                            </div>
-                        </router-link>
-
-
-                        <router-link to="/destination_info">
-                            <div class="trip-section showBg-3">
-                                <div class="trip-text">
-                                    <div class="trip-subtitle">The Cultural Trip</div>
-                                    <div class="trip-title">Spiti Valley</div>
-                                </div>
-                            </div>
-                        </router-link>
-
                     </div>
                 </div>
                 <div class="col-md-6 innerRow">
@@ -47,123 +28,41 @@
                     </p>
                     <div class="row custom-row">
                         <div class="col-sm-4 slideUpOne" ref="slideUpOne">
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/goa.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/amritsar.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/kerela-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/goa.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/amritsar.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/kerela-slide.png" />
-                            </div>
-                            <!-- Duplicate the images for seamless looping -->
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/goa.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/amritsar.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/kerela-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/goa.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/amritsar.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/kerela-slide.png" />
-                            </div>
+                            <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
+                                v-for="(trip, index) in slidePackagesOne" 
+                                :key="trip" 
+                                >
+                                <div :class="{tripHght: ((index % 2) == 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                    <div class="trip-text">{{ (index % 2) == 0 }}
+                                        <div class="trip-subtitle"></div>
+                                        <div class="trip-title">{{ trip.name }}</div>
+                                    </div>
+                                </div>
+                            </router-link>
                         </div>
 
                         <div class="col-sm-4 slideUpOne" ref="slideUpOne">
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/odisha.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/ladakh-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/beach.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/odisha.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/ladakh-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/beach.png" />
-                            </div>
-                            <!-- Duplicate the images for seamless looping -->
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/odisha.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/ladakh-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/beach.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/odisha.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/ladakh-slide.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/beach.png" />
-                            </div>
+                            <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
+                                v-for="(trip, index) in slidePackagesTwo" :key="trip">
+                                <div :class="{tripHght: ((index % 2) != 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                    <div class="trip-text">
+                                        <div class="trip-subtitle"></div>
+                                        <div class="trip-title">{{ trip.name }}</div>
+                                    </div>
+                                </div>
+                            </router-link>
                         </div>
 
                         <div class="col-sm-4 slideUpOne" ref="slideUpOne">
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/mumbai.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/nature.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/historical.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/mumbai.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/nature.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/historical.png" />
-                            </div>
-                            <!-- Duplicate the images for seamless looping -->
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/mumbai.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/nature.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/historical.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/mumbai.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/nature.png" />
-                            </div>
-                            <div class="rowOne">
-                                <img class="custom-img" src="@/assets/images/historical.png" />
-                            </div>
+                            <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
+                                v-for="(trip, index) in slidePackagesThree" :key="trip">
+                                <div :class="{tripHght: ((index % 2) == 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                    <div class="trip-text">
+                                        <div class="trip-subtitle"></div>
+                                        <div class="trip-title">{{ trip.name }}</div>
+                                    </div>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
 
@@ -180,11 +79,20 @@ export default {
     mounted() {
         this.animateSlides(1);
     },
+    data() {
+        return {
+            topPackages: '',
+            slidePackagesOne: '',
+            slidePackagesTwo: '',
+            slidePackagesThree: ''
+        }
+    },
     computed: {
-        ...mapGetters(['getTrendDest', 'getError']),
+        ...mapGetters(['getTrendPackage', 'getError']),
+
     },
     methods: {
-        ...mapActions(['fetchTrendingDestination']),
+        ...mapActions(['fetchTrendPackage']),
         animateSlides(position) {
             const slides = this.$refs.slideUpOne;
             const slideWidth = slides.offsetHeight / 2;
@@ -194,11 +102,38 @@ export default {
             }
             slides.style.transform = `translateY(${position}px)`;
             requestAnimationFrame(this.animateSlides);
+        },
+        getTrending() {
+            console.log('Trend Package Data:', this.getTrendPackage);
+            //return this.getTrendPackage;
+        },
+        topThreePack() {
+            let trEndData = this.getTrendPackage.data.filter((obj, index) => index < 3);
+            this.topPackages = trEndData;
+            console.log('cello', trEndData);
+        },
+        slidePackagesFirst() {
+            let firstPick = this.getTrendPackage.data.filter((obj, index) => index < 5);
+            this.slidePackagesOne = firstPick;
+        },
+        slidePackagesSecond() {
+            let secondPick = this.getTrendPackage.data.slice(2, 8);
+            let secondFinal = secondPick.filter((obj, index) => index < 5);
+            this.slidePackagesTwo = secondFinal;
+        },
+        slidePackagesThird() {
+            let thirdPick = this.getTrendPackage.data.slice(3, 8);
+            let thirdFinal = thirdPick.filter((obj, index) => index < 5);
+            this.slidePackagesThree = thirdFinal;
         }
     },
     async created() {
-        await this.fetchTrendingDestination();
-        console.log('Trending', this.getTrendDest);
+        await this.fetchTrendPackage();
+        await this.topThreePack();
+        await this.slidePackagesFirst();
+        await this.slidePackagesSecond();
+        await this.slidePackagesThird();
+        await this.getTrending();
     }
 }
 </script>
@@ -227,11 +162,15 @@ export default {
     margin: auto;
 }
 
+.tripHght {
+    height: 200px !important;
+}
+
 .trip-section {
     position: relative;
     color: white;
-    height: 300px;
     background-size: cover;
+    height: 300px;
     background-position: center;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -292,19 +231,24 @@ p.dummyTxtOne {
     width: 190px;
 }
 
-/* 
 .slideUpOne {
-    animation: slideUp 10s linear infinite;
-}
-*/
 
-@keyframes slideUp {
+    gap: 1vw;
+
+    animation: section2_translateCards__Gkjpc 35s linear infinite;
+}
+
+@keyframes section2_translateCards__Gkjpc {
     0% {
-        transform: translateY(0%);
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(calc(-110vh));
     }
 
     100% {
-        transform: translateY(100%);
+        transform: translateY(0);
     }
 }
 </style>

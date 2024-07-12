@@ -30,33 +30,26 @@ export default {
     methods: {
         ...mapActions(['fetchData', 'fetchCitySlugData', 'fetchCityData']),
         async getCityWisePackage() {
+            console.log('radhakrishna', this.getCitySlugData);
             let allData = this.getData;
-            let filterData =  await this.getCitySlugData;
             let citySlug = this.$route.params.citySlug;
-            console.log('radha-krishna', filterData);
+            await this.fetchCitySlugData(citySlug);
+            let filterData = this.getCitySlugData;
+            
             if(citySlug) {
-                console.log('mannnissshhh', filterData);
-                this.tourPackageList =  filterData.data.filter(obj => obj.citySlug == citySlug);
+                //this.tourPackageList =  filterData.data.filter(obj => obj.citySlug == citySlug);
+                this.tourPackageList = filterData;
             } else {
                 this.tourPackageList = allData;
             }
             
         },
     },
-    created() {
-        console.log('Krishnaa',this.$route.params.citySlug);
-        console.log('Krishnaa-Radhaa',this.getCitySlugData);
-
-        this.fetchData();
-        this.fetchCitySlugData();
+    async created() {
+        let vari = await this.fetchData();
+        console.log('sasjaasnja', vari);
         this.getCityWisePackage();
     },
-    //props: {
-    //    limit: {
-    //        type: Number,
-    //        default: 6,
-    //    }
-    //}
 }
 </script>
 
