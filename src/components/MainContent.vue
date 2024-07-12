@@ -31,7 +31,7 @@
           <button :class="{ 'active': isActive === 'railway' }" @click="toggleButton('railway')">Railway</button>
         </div>
       </div>
-      <div class="searchBar">
+      <div :class="{'searchBar': true, 'hidden': isActive === 'activities'}">
         <div @click="toggleTourForm" :class="{'bar': true, 'hidden': showForm}">
           <p class="srchText">Search for</p>
           <img class="srchIcon" src="@/assets/images/search.png" />
