@@ -184,6 +184,7 @@ button:not(.active) {
   border-radius: 20px;
   color: #fff;
   font-size: 17px;
+  border: none;
 }
 
 button.active {

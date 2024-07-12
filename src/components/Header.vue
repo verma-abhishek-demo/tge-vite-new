@@ -74,10 +74,15 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
           <div class="container">
             <ul class="navbar-nav mr-auto tgeCity" v-if="getCityData">
+              <li class="nav-item">
+                <router-link to="/explore_packages">
+                  <img class="exploreImg" src="@/assets/images/explore.png" />
+                </router-link>
+              </li>
               <li class="nav-item"  v-for="city in getCityData" :key="city.slug">
-                <router-link @click="fetchCitySlugData(city.slug)" :to="{ name: 'DestinationInfo', params: { citySlug: city.slug } }" >
+                <router-link class="city-text-name" @click="fetchCitySlugData(city.slug)" :to="{ name: 'DestinationInfo', params: { citySlug: city.slug } }" >
                   <img :src="city.icon" alt="Explore" width="60" height="60">
-                  <p>{{ city.name }}</p>
+                  <p >{{ city.name }}</p>
                 </router-link>
               </li>
               
@@ -199,6 +204,10 @@ export default {
   width: 100%;
 }
 
+img.exploreImg {
+    min-width: 59px !important;
+    height: 101px;
+}
 
 .tgeCity li.nav-item {
     text-align: center;
@@ -227,6 +236,13 @@ export default {
 .diaolog-box.slide-down {
   transform: translateY(0);
 }
+
+a.city-text-name:hover p {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+
 
 span.normalText {
   text-transform: uppercase;

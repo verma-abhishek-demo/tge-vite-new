@@ -41,7 +41,7 @@ const store = createStore({
         
         async fetchData({ commit }) {
             try {
-                const response = await fetch(`${baseURL}/apis/packages/index?page=1?limit=10`);
+                const response = await fetch(`${baseURL}/apis/packages/index?page=1&limit=9`);
                 const { data } = await response.json();
                 commit('setData', data.data);
             } catch(error) {

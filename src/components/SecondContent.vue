@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6 innerRow">
+                <div class="col-md-6">
                     <div class="red-line">
                         <span class="title">TOP TRENDING</span><br>
                         <span class="title red-text">DESTINATIONS</span>&nbsp;
@@ -32,7 +32,7 @@
                                 v-for="(trip, index) in slidePackagesOne" 
                                 :key="trip" 
                                 >
-                                <div :class="{tripHght: ((index % 2) != 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                <div :class="{tripHght: ((index % 2) != 0)}" class="trip-section rightTrip" :style="{ backgroundImage: `url(${trip.main_image})` }">
                                     <div class="trip-text">
                                         <div class="trip-subtitle"></div>
                                         <div class="trip-title">{{ trip.name }}</div>
@@ -44,7 +44,7 @@
                         <div class="col-sm-4 slideUpOne" ref="slideUpOne">
                             <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
                                 v-for="(trip, index) in slidePackagesTwo" :key="trip">
-                                <div :class="{tripHght: ((index % 2) == 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                <div :class="{tripHght: ((index % 2) == 0)}" class="trip-section rightTrip" :style="{ backgroundImage: `url(${trip.main_image})` }">
                                     <div class="trip-text">
                                         <div class="trip-subtitle"></div>
                                         <div class="trip-title">{{ trip.name }}</div>
@@ -56,7 +56,7 @@
                         <div class="col-sm-4 slideUpOne" ref="slideUpOne">
                             <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
                                 v-for="(trip, index) in slidePackagesThree" :key="trip">
-                                <div :class="{tripHght: ((index % 2) != 0)}" class="trip-section" :style="{ backgroundImage: `url(${trip.main_image})` }">
+                                <div :class="{tripHght: ((index % 2) != 0)}" class="trip-section rightTrip" :style="{ backgroundImage: `url(${trip.main_image})` }">
                                     <div class="trip-text">
                                         <div class="trip-subtitle"></div>
                                         <div class="trip-title">{{ trip.name }}</div>
@@ -154,7 +154,7 @@ export default {
 }
 
 .innerRow {
-    padding: 0;
+    margin-top: 17px;
 }
 
 .wrapper {
@@ -162,8 +162,12 @@ export default {
     margin: auto;
 }
 
+.rightTrip {
+    height: 300px !important;
+}
+
 .tripHght {
-    height: 150px !important;
+    height: 200px !important;
 }
 
 .trip-section {
@@ -200,10 +204,11 @@ p.dummyTxtOne {
 }
 
 .trip-title {
-    font-size: 35px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 600;
     color: #fff;
     font-family: Merriweather;
+    text-transform: capitalize;
 }
 
 .trip-subtitle {
