@@ -94,7 +94,6 @@ export default {
 }
 
 .footer {
-    background-image: url('https://s3-alpha-sig.figma.com/img/2965/7764/0a3e0b4597a332c095c75b6b90cb7c2c?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oRcrbVe0ulU3zMjhPh9vdIF~48PcQyO2tHOrz7AzVmi1S8KpqBHXKC~RdDoULiLkC4sQnu35hmJ-8PLQYEs2B4x~hp7K-gqNVRdWGhn7OkhKLmP2zZMCfwx7HzNF~6dLKsJx~DqQHr-PCsKuLw9rqD09UR0TR1bpQ0WnmH0nuCasf2HCt3KDxnyqNNygehH2oceyQQxF6iUPbTnJ8oC7A6Qyo~7maU33bSohIzP50mOhUqaLAgdLoHdK4GW16xkHx4kb2LyReRZZzoo-zD3Zve~S5lZRHaJ53uqy2NiVNtbgOhZAEo9J~a2qUw1kfOkepNCEobGV2uPwCbkbjtb38g__');
     padding: 30px;
 }
 

@@ -247,7 +247,7 @@ span.red {
   margin-top: -0.5rem;
 }
 
-.button-group[data-v-c970699f] {
+.button-group {
   display: flex;
   align-items: center;
   justify-content: center;

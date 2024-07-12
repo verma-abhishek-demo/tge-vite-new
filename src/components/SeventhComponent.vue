@@ -77,7 +77,7 @@ export default {
 
 }
 
-.section-seven[data-v-d0c226b0] {
+.section-seven {
     background-color: #1a1a2e;
     background-image: url(@/assets/images/seventh-bg.png);
     background-repeat: no-repeat;
@@ -132,7 +132,7 @@ export default {
     height: auto;
 }
 
-.inset-image[data-v-d0c226b0] {
+.inset-image {
     position: absolute;
     bottom: 19px;
     right: 24px;

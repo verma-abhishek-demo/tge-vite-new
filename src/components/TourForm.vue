@@ -205,7 +205,7 @@ p {
     margin-top: 10px;
 }
 
-.min-range[data-v-9e37fd7b] {
+.min-range {
     border: 1px solid grey;
     padding: 4px;
     margin-right: 15px;

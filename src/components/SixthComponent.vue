@@ -51,7 +51,7 @@ export default {
     border-radius: 20px;
 }
 
-.content[data-v-38ca816b] {
+.content {
     position: relative;
     z-index: 1;
     width: 500px;
