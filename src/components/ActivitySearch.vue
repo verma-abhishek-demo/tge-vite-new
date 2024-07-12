@@ -143,7 +143,7 @@ export default {
 </script>
 
 <style scoped>
-b-row.activitySec[data-v-187ec7f4] {
+b-row.activitySec {
     width: 793px;
     background: #fff;
     display: flex;
