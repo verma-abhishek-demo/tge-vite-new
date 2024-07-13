@@ -18,14 +18,11 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['getData', 'getCitySlugData', 'getCityData', 'getError']),
+        ...mapGetters(['getData', 'getCitySlugData', 'getCityData', 'getError', 'getCurrentPage']),
 
         loadError() {
             return this.getError;
         },
-        limitedData() {
-            return this.getData.slice(0, this.limit);
-        }
     },
     methods: {
         ...mapActions(['fetchData', 'fetchCitySlugData', 'fetchCityData']),
@@ -46,10 +43,15 @@ export default {
         },
     },
     async created() {
-        let vari = await this.fetchData();
-        console.log('sasjaasnja', vari);
+        await this.fetchData(this.getCurrentPage);
         this.getCityWisePackage();
     },
+    watch: {
+        getCurrentPage() {
+            this.fetchData(this.getCurrentPage);
+            this.getCityWisePackage();
+        }
+    }
 }
 </script>
 

@@ -11,6 +11,7 @@ const store = createStore({
             citySlugData: [],
             searchCity: [],
             trendPackage: [],
+            currentPage: 1,
             error: null
         }
     },
@@ -36,14 +37,18 @@ const store = createStore({
         setError(state, payload) {
             state.error = payload;
         },
+        setCurrentPage(state, page) {
+            state.currentPage = page;
+        }
     },
     actions: {
         
-        async fetchData({ commit }) {
+        async fetchData({ commit }, page = 1) {
             try {
-                const response = await fetch(`${baseURL}/apis/packages/index?page=1&limit=9`);
+                const response = await fetch(`${baseURL}/apis/packages/index?page=${page}&limit=9`);
                 const { data } = await response.json();
                 commit('setData', data.data);
+                commit('setCurrentPage', page);
             } catch(error) {
                 commit('setError', error);
             }
@@ -120,6 +125,9 @@ const store = createStore({
         },
         getError(state) {
             return state.error;
+        },
+        getCurrentPage(state) {
+            return state.currentPage;
         }
     }
 });
