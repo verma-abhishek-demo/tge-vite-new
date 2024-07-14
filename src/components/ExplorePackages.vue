@@ -2,10 +2,10 @@
     <div class="wrapper">
         <TotalPackages />
         <div class="pagination">
-            <button class="btnPage" @click="changePage(currentPage - 1)" :disabled="currentPage === 1">&lBarr;</button>
+            <button class="btnP" @click="changePage(currentPage - 1)" :disabled="currentPage === 1">Prev</button>
             <button class="btnPage" @click="changePage(1)">1</button>
             <button class="btnPage" @click="changePage(2)">2</button>
-            <button class="btnPage" @click="changePage(currentPage + 1)">&rBarr;</button>
+            <button class="btnP" @click="changePage(currentPage + 1)">Next</button>
         </div>
     </div>
 </template>
@@ -46,7 +46,16 @@ export default {
 }
 .btnPage {
     margin: 0 5px;
-    padding: 10px 20px;
+    padding: 5px 12px;
     cursor: pointer;
+    background: red;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+}
+
+button.btnP {
+    background: none;
+    border: none;
 }
 </style>

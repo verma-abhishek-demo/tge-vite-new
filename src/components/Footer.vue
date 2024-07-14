@@ -36,25 +36,13 @@
                         </div>
                         <div class="col-md-3">
                             <h5>Travel Destinations</h5>
-                            <div class="row g-2">
-                                <div class="col-4 topRow">
-                                    <img src="@/assets/images/beaches.png" alt="Beaches">
-                                </div>
-                                <div class="col-4 topRow">
-                                    <img src="@/assets/images/bali.png" alt="Bali">
-                                </div>
-                                <div class="col-4 topRow">
-                                    <img src="@/assets/images/prague.png" alt="Prague">
-                                </div>
-                                <div class="col-4">
-                                    <img src="@/assets/images/usa.png" alt="USA">
-                                </div>
-                                <div class="col-4">
-                                    <img src="@/assets/images/china.png" alt="China">
-                                </div>
-                                <div class="col-4">
-                                    <img src="@/assets/images/paris.png" alt="Paris">
-                                </div>
+                            <div class="row ftr-imgs g-2">
+                                <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }" v-for="(trip, index) in topPackages" :key="trip">
+                                    <div class="col-4 topRow">
+                                        <img :src="trip.main_image" alt="Beaches">
+                                        <p>{{ trip.name }}</p>
+                                    </div>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -70,7 +58,29 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 export default {
+    data() {
+        return {
+            topPackages: ''
+        }
+    },
+    computed: {
+        ...mapGetters(['getTrendPackage', 'getError']),
+
+    },
+    methods: {
+        ...mapActions(['fetchTrendPackage']),
+        topThreePack() {
+            let trEndData = this.getTrendPackage.data.filter((obj, index) => index < 6);
+            this.topPackages = trEndData;
+            console.log('footer-Images', trEndData);
+        },
+    },
+    async created() {
+        await this.fetchTrendPackage();
+        await this.topThreePack();
+    }
 
 }
 </script>
@@ -97,8 +107,28 @@ export default {
     padding: 30px;
 }
 
+.ftr-imgs.g-2 {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}
+
+.topRow {
+    margin-bottom: -7px;
+    max-width: 90px;
+    max-height: 90px;
+    position: relative;
+}
+
+.topRow p {
+    color: #000;
+    position: absolute;
+    top: 39px;
+    left: 25px;
+}
+
 .footer img {
-    width: 89px;
+    width: 88px;
+    height: 88px;
 }
 
 img.ftrLink {
@@ -114,9 +144,7 @@ img.ftrIcons {
     width: 30px !important;
 }
 
-.topRow {
-    margin-bottom: -20px;
-}
+
 
 .footer h5 {
     margin-bottom: 20px;
