@@ -19,6 +19,11 @@
             <div class="row">
                 <TotalPackages />
             </div>
+            <div class="viewAll">
+                <router-link to="/explore_packages">
+                    <button class="allPackage">View All</button>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -42,6 +47,20 @@ export default {
 .red-line {
     border-left: 5px solid red;
     padding-left: 10px;
+}
+
+.viewAll {
+    text-align: center;
+    display: block;
+    margin-top: 30px;
+}
+
+button.allPackage {
+    background: #dc3545;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
 }
 
 .title {

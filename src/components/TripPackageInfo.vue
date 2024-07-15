@@ -155,6 +155,7 @@
                                             <img class="gate-img" src="@/assets/images/india-gate.png" />
                                             <p>{{ daywiseData.tour_name }}</p>
                                         </div>
+
                                     </div>
                                 </button>
                             </h2>
@@ -162,8 +163,14 @@
                                 :class="{ show: index === 0 }" :aria-labelledby="'heading' + index"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body body-accord">
-                                    <img class="accrd-image" src="@/assets/images/gold-temple.png" />
                                     <p v-html="daywiseData.tour_des"></p>
+                                </div>
+                                <div v-for="hotDes in daywiseData.hot_des" :key="hotDes" class="hot-data">
+                                    <img :src="hotDes.attractionimage" />
+                                    <div class="hotRight">
+                                        <p class="pOne">{{ hotDes.hot_des }}</p>
+                                        <p>{{ hotDes.description }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -378,11 +385,17 @@ export default {
             let packageName = this.getpackageData;
             return packageName[0];
         },
-
+        packageHotDetails() {
+            let packageHotDetail = this.getpackageData;
+            console.log('roggg', packageHotDetail);
+            //let finalDetailResult = packageHotDetail.find((obj) => obj.daywise_meta);
+            console.log('Hanuman', finalDetailResult);
+            return finalDetailResult;
+            
+        },
         loadError() {
             return this.getError;
         },
-
     },
     data() {
         return {
@@ -441,6 +454,7 @@ export default {
     },
     async created() {
         await this.fetchData();
+        console.log('roggg', this.packageHotDetails);
         console.log('avi', this.getpackageData);
     }
 }
@@ -465,6 +479,28 @@ export default {
 .reqqust-call {
     width: 30%;
     margin-top: 16px;
+}
+
+.hot-data {
+    display: flex;
+    justify-content: start;
+    margin: 0 15px 15px 15px;
+    gap: 10px;
+    border-bottom: 4px solid #a10000;
+}
+
+.hot-data img {
+    border: 3px solid red;
+    border-style: dotted;
+    border-radius: 90px;
+    max-width: 76px;
+    max-height: 76px;
+}
+
+.hotRight p.pOne {
+    color: red;
+    font-size: 20px;
+    text-transform: capitalize;
 }
 
 button.rqstBtn {

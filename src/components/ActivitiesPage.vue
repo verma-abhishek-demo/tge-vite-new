@@ -21,51 +21,22 @@
                 <div class="col-lg-4">
                     <router-link to="/inner_activity_page">
                         <div class="card bg-dark text-white">
-                            <img src="@/assets/images/rockClimbing.png" class="card-img" alt="Rock Climbing">
+                            <img :src="totalActivitiesOne?.pdf_image" class="card-img" alt="Rock Climbing">
                             <div class="card-img-overlay d-flex align-items-end">
                                 <div>
-                                    <h5 class="card-title">Rock Climbing</h5>
-                                    <p class="card-text">Let Us Look At Some Of The Popular Adventure Sports In Himachal
-                                        Pradesh That Take The State By Storm</p>
+                                    <h5 class="card-title">{{ totalActivitiesOne?.package_name }}</h5>
                                 </div>
                             </div>
                         </div>
                     </router-link>
-
                 </div>
                 <div class="col-lg-4">
-                    <router-link to="/inner_activity_page">
-                        <div class="card bg-dark text-middle">
-                            <img src="@/assets/images/red-tracking.png" class="middle-img" alt="Hiking">
-                            <div class="card-img-overlay d-flex align-items-end">
-                                <div>
-                                    <h5 class="card-title">Hiking</h5>
-                                    <p class="card-text">Let Us Look At Some Of The Popular Adventure Sports In Himachal
-                                        Pradesh That Take The State By Storm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                    <router-link to="/inner_activity_page">
+                    <router-link to="/inner_activity_page" v-for="pckg in totalActivitiesTwo" :key="pckg">
                         <div class="card bg-dark text-middle card-margin">
-                            <img src="@/assets/images/rafting.png" class="middle-img" alt="River Rafting">
+                            <img :src="pckg?.pdf_image" class="middle-img" alt="Hiking">
                             <div class="card-img-overlay d-flex align-items-end">
                                 <div>
-                                    <h5 class="card-title">River Rafting</h5>
-                                    <p class="card-text">Let Us Look At Some Of The Popular Adventure Sports In Himachal
-                                        Pradesh That Take The State By Storm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                    <router-link to="/inner_activity_page">
-                        <div class="card bg-dark text-middle">
-                            <img src="@/assets/images/rafting.png" class="middle-img" alt="Vehicle Safari">
-                            <div class="card-img-overlay d-flex align-items-end">
-                                <div>
-                                    <h5 class="card-title">Vehicle Safari</h5>
-                                    <p class="card-text">Let Us Look At Some Of The Popular Adventure Sports In Himachal
-                                        Pradesh That Take The State By Storm</p>
+                                    <h5 class="card-title">{{ pckg?.package_name }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -75,12 +46,10 @@
                 <div class="col-lg-4">
                     <router-link to="/inner_activity_page">
                         <div class="card bg-dark text-white">
-                            <img src="@/assets/images/para-sunset.png" class="card-img" alt="Rock Climbing">
+                            <img :src="totalActivitiesThree?.pdf_image" class="card-img" alt="Rock Climbing">
                             <div class="card-img-overlay d-flex align-items-end">
                                 <div>
-                                    <h5 class="card-title">Rock Climbing</h5>
-                                    <p class="card-text">Let Us Look At Some Of The Popular Adventure Sports In Himachal
-                                        Pradesh That Take The State By Storm</p>
+                                    <h5 class="card-title">{{ totalActivitiesThree?.package_name }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +66,55 @@
 import MainContent from './MainContent.vue';
 import SixthComponent from './SixthComponent.vue';
 import SeventhComponent from './SeventhComponent.vue';
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
     components: {
         MainContent,
         SixthComponent,
         SeventhComponent
+    },
+    data() {
+        return {
+            totalActivitiesOne: null,
+            totalActivitiesTwo: null,
+            totalActivitiesThree: null
+        }
+    },
+    computed: {
+        ...mapGetters(['getActivity']),
+    },
+    methods: {
+        ...mapActions(['fetchActivities']),
+        getActivitypageOne() {
+            if (this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
+                this.totalActivitiesOne = this.getActivity.data[0];
+                console.log('om Shivay', this.totalActivitiesOne);
+            } else {
+                console.error('No activity data found');
+            }
+        },
+        getActivitypageTwo() {
+            if(this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
+                this.totalActivitiesTwo = this.getActivity.data.slice(1, 4);
+            } else {
+                console.error('No activity data found');
+            }
+        },
+        getActivitypageThree() {
+            if(this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
+                this.totalActivitiesThree = this.getActivity.data[5];
+            } else {
+                console.error('No activity data found');
+            }
+        }
+    },
+    async created() {
+        await this.fetchActivities();
+        this.getActivitypageOne();
+        this.getActivitypageTwo();
+        this.getActivitypageThree();
+        console.log('om namah Shivay', this.getActivity.data);
     }
 }
 </script>

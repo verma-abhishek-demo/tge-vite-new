@@ -27,9 +27,13 @@ export default {
     methods: {
         ...mapActions(['fetchData']),
         changePage(page) {
+            console.log('jai-hanuman', this.getCurrentPage);
             if (page < 1) return;
             this.fetchData(page);
         }
+    },
+    created() {
+        console.log('jai-hanuman', this.getCurrentPage);
     }
 }
 </script>

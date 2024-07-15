@@ -12,6 +12,7 @@ const store = createStore({
             searchCity: [],
             trendPackage: [],
             currentPage: 1,
+            activity: [],
             error: null
         }
     },
@@ -39,6 +40,9 @@ const store = createStore({
         },
         setCurrentPage(state, page) {
             state.currentPage = page;
+        },
+        setActivity(state, payload) {
+            state.activity = payload;
         }
     },
     actions: {
@@ -57,7 +61,7 @@ const store = createStore({
             try {
                 const resposne = await fetch(`${baseURL}/apis/packages/details/${id}`);
                 const { data } = await resposne.json();
-                commit('setPackageData', data)
+                commit('setPackageData', data);
             } catch (error) {
                 commit('setError', error);
             }
@@ -66,7 +70,7 @@ const store = createStore({
             try {
                 const response = await fetch(`${baseURL}/apis/packages/package_category_with_city_tge`);
                 const { data } = await response.json();
-                commit('setCityData', data)
+                commit('setCityData', data);
             } catch (error) {
                 commit('setError', error);
             }
@@ -99,7 +103,16 @@ const store = createStore({
                 const { data } = resposne.data;
                 commit('setTrendPackage', data);
             } catch (error) {
-                this.commit('setError', error);
+                commit('setError', error);
+            }
+        },
+        async fetchActivities({commit}, page = 2) {
+            try {
+                const response = await axios.get(`${baseURL}/apis/packages/typePacakge/${page}`);
+                const { data } = response.data;
+                commit('setActivity', data);
+            } catch (error) {
+                commit('setError', error);
             }
         }
 
@@ -128,6 +141,9 @@ const store = createStore({
         },
         getCurrentPage(state) {
             return state.currentPage;
+        },
+        getActivity(state) {
+            return state.activity;
         }
     }
 });

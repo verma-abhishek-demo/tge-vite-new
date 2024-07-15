@@ -855,7 +855,6 @@ export default {
             } catch (error) {
                 console.error('Error: ', error);
             }
-
             this.visible = false;
         }
     },

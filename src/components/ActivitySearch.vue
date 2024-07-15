@@ -28,7 +28,10 @@
                     <b-col>
                         <div @click="toggleCounter" class="loc">
                             <img src="@/assets/images/bag.png" />
-                            <p>No. of person</p>
+                            <div class="childadult">
+                                <p class="conterHdng">No. of person</p>
+                                <p class="counterText">{{ adultcounter }} Adult  {{ childcounter }} Children</p>
+                            </div>
                         </div>
 
                     </b-col>
@@ -135,6 +138,10 @@ export default {
         toggleCounter() {
             this.showCounter = !this.showCounter;
         },
+        showAlertSuccess() {
+            this.$swal("Thank You For Bookin With Us",
+                "Thank you for your reservation. We’re dedicated to giving you the best experience possible. If you have any questions, feel free to get in touch.", "success");
+        },
         async submitForm() {
             const formData = {
                 location: this.inputSearch,
@@ -154,6 +161,7 @@ export default {
                     console.log('enquiryData', response);
                     alert('Success!!!');
                 })
+                this.showAlertSuccess();
             } catch (error) {
                 console.error('ERROR', error);
             }
@@ -204,6 +212,16 @@ li.listCity {
     line-height: 31px;
 }
 
+p.conterHdng {
+    line-height: 10px;
+}
+
+p.counterText {
+    font-size: 10px;
+    line-height: 0px;
+    color: #808080ba;
+}
+
 .loc {
     display: flex;
     width: 200px;
@@ -225,6 +243,8 @@ span.sizeCntr {
     border-radius: 25px;
     width: 34px;
     height: 34px;
+    cursor: pointer;
+    margin: 0 5px;
 }
 
 button.srchBtn {
@@ -243,6 +263,6 @@ span.sizeCntr.disabled {
     background: #fff;
     width: 215px;
     margin: 0 0 0 790px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
 }
 </style>
