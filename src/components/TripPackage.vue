@@ -84,7 +84,7 @@ img.night-icon {
 
 .travel-card {
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;

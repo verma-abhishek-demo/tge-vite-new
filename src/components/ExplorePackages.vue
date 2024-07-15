@@ -3,8 +3,8 @@
         <TotalPackages />
         <div class="pagination">
             <button class="btnP" @click="changePage(currentPage - 1)" :disabled="currentPage === 1">Prev</button>
-            <button class="btnPage" @click="changePage(1)">1</button>
-            <button class="btnPage" @click="changePage(2)">2</button>
+            <button :class="{ active: currentPage !== 1 }" class="btnPage" @click="changePage(1)">1</button>
+            <button :class="{ active: currentPage !== 2 }" class="btnPage" @click="changePage(2)">2</button>
             <button class="btnP" @click="changePage(currentPage + 1)">Next</button>
         </div>
     </div>
@@ -42,7 +42,7 @@ export default {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .btnPage {
     margin: 0 5px;
@@ -52,6 +52,11 @@ export default {
     border: none;
     border-radius: 30px;
     color: #fff;
+}
+
+.active {
+    background: none;
+    color: #000;
 }
 
 button.btnP {

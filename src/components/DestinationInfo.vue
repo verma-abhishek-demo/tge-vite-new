@@ -1,5 +1,6 @@
 <template>
-    <div class="sectionOne">
+    <div v-if="topPackages" :style="{ backgroundImage: `url(${topPackages.main_image})` }"
+        class="sectionOne">
         <div class="wrap">
             <h1 class="city-heading">{{ cityInfo }}</h1>
             <p>Thrills for Soul and Spirit!</p>
@@ -87,7 +88,7 @@ export default {
         ThirdContent
     },
     computed: {
-        ...mapGetters(['getCityData','getData', 'getError']),
+        ...mapGetters(['getCityData', 'getData', 'getTrendPackage', 'getError']),
         cityInfo() {
             const citySlug = this.$route.params.citySlug;
             return citySlug;
@@ -106,19 +107,26 @@ export default {
     },
     data() {
         return {
-
+            topPackages: null,
         }
     },
     mounted() {
         this.animateSlides(1);
     },
     methods: {
-        ...mapActions(['fetchCityData', 'fetchData']),
+        ...mapActions(['fetchCityData', 'fetchData', 'fetchTrendPackage']),
+        getTrending() {
+            console.log('Trend Package Data:', this.getTrendPackage.data);
+            const citySlug = this.$route.params.citySlug;
+            this.topPackages = this.getTrendPackage.data.find(obj => obj.slug === citySlug);
+            //this.topPackages = this.getTrendPackage;
+            //return this.getTrendPackage;
+        },
         getCityWiseData() {
             let allData = this.getData;
-            console.log('Radhhaaa',allData)
+            console.log('Radhhaaa', allData)
             const citySlug = this.$route.params.citySlug;
-            let finalResult  = allData.filter(obj => obj.citySlug == citySlug);
+            let finalResult = allData.filter(obj => obj.citySlug == citySlug);
             console.log('Final-Result', finalResult);
             return finalResult;
         },
@@ -134,13 +142,13 @@ export default {
         },
     },
     async created() {
-        //console.log('hffjnckcnkjcn', this.getCityData);
-        //console.log('qwertyuiiop', this.cityInfo)
         console.log('RADHAAA', this.getCityWiseData);
         await this.fetchCityData(this.$route.params.citySlug);
+        await this.getTrending();
         this.getCityWiseData();
-
-        //console.log(this.$route.params.citySlug)
+    },
+    watch: {
+        '$route.params.citySlug': 'getTrending'
     }
 }
 </script>
@@ -157,9 +165,10 @@ export default {
 }
 
 .sectionOne {
-    background-image: url('@/assets/images/bike-fade-bg.png');
     padding: 100px 0;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .wrap {

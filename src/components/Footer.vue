@@ -37,7 +37,7 @@
                         <div class="col-md-3">
                             <h5>Travel Destinations</h5>
                             <div class="row ftr-imgs g-2">
-                                <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }" v-for="(trip, index) in topPackages" :key="trip">
+                                <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }" v-for="(trip, index) in topPackages" :key="index">
                                     <div class="col-4 topRow">
                                         <img :src="trip.main_image" alt="Beaches">
                                         <p>{{ trip.name }}</p>
@@ -120,10 +120,11 @@ export default {
 }
 
 .topRow p {
-    color: #000;
+    color: #fff;
     position: absolute;
     top: 39px;
     left: 25px;
+    font-size: 14px;
 }
 
 .footer img {
@@ -133,6 +134,7 @@ export default {
 
 img.ftrLink {
     width: 25px !important;
+    height: 25px !important;
 }
 
 .social-icons {
@@ -142,6 +144,7 @@ img.ftrLink {
 
 img.ftrIcons {
     width: 30px !important;
+    height: 30px !important;
 }
 
 
