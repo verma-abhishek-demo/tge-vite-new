@@ -12,7 +12,7 @@
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" v-model="name.val">
+                <input @input="clearvalidity('name', $event)" @blur="clearvalidity('name', $event)" type="text" class="form-control" id="name" v-model="name.val">
                 <transition name="fade">
                   <p class="redText" v-if="!name.isValid">Name is required.</p>
                 </transition>
@@ -20,16 +20,15 @@
 
               <div class="form-group col-md-4">
                 <label for="email">Email id</label>
-                <input type="email" class="form-control" id="email" v-model="email.val">
+                <input @input="clearvalidity('email', $event)" @blur="clearvalidity('email', $event)" type="email" class="form-control" id="email" v-model="email.val">
                 <transition name="fade">
                   <p class="redText" v-if="!email.isValid">Email is required.</p>
                 </transition>
               </div>
 
-
               <div class="form-group col-md-4">
                 <label for="phone">Phone No.</label>
-                <input type="text" class="form-control" id="phone" v-model="phone.val">
+                <input @input="clearvalidity('phone', $event)" @blur="clearvalidity('phone', $event)" type="text" class="form-control" id="phone" v-model="phone.val">
                 <transition name="fade">
                   <p class="redText" v-if="!phone.isValid">Phone is required.</p>
                 </transition>
@@ -39,7 +38,7 @@
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="starting">Departure Date</label>
-                <Calendar v-model="starting.val" id="starting" dateFormat="dd/mm/yy" />
+                <input type="date" @change="clearvalidity('starting', $event)" @blur="clearvalidity('starting', $event)" class="form-control" v-model="starting.val" id="starting" dateFormat="dd/mm/yy" />
                 <transition name="fade">
                   <p class="redText" v-if="!starting.isValid">Departure Date is required.</p>
                 </transition>
@@ -48,7 +47,7 @@
 
               <div class="form-group col-md-4">
                 <label for="destination">Return Date</label>
-                <Calendar v-model="destination.val" id="destination" dateFormat="dd/mm/yy" />
+                <input type="date" @change="clearvalidity('destination', $event)" @blur="clearvalidity('destination', $event)" class="form-control" v-model="destination.val" id="destination" dateFormat="dd/mm/yy" />
                 <transition name="fade">
                   <p class="redText" v-if="!destination.isValid">Return date is required.</p>
                 </transition>
@@ -57,7 +56,7 @@
 
               <div class="form-group col-md-4">
                 <label for="noOfPerson">No. Of Person</label>
-                <input type="number" class="form-control" id="noOfPerson" v-model="noOfPerson.val">
+                <input @input="clearvalidity('noOfPerson', $event)" @blur="clearvalidity('noOfPerson', $event)" type="number" class="form-control" id="noOfPerson" v-model="noOfPerson.val">
                 <transition name="fade">
                   <p class="redText" v-if="!noOfPerson.isValid">No of persons should not be empty.</p>
                 </transition>
@@ -67,7 +66,7 @@
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="finalDestination">Destination</label>
-                <input type="text" class="form-control" id="finalDest" v-model="finalDest.val" />
+                <input @input="clearvalidity('finalDest', $event)" @blur="clearvalidity('finalDest', $event)" type="text" class="form-control" id="finalDest" v-model="finalDest.val" />
                 <transition name="fade">
                   <p class="redText" v-if="!finalDest.isValid">Destination is required.</p>
                 </transition>
@@ -128,10 +127,56 @@ export default {
         val: '',
         isValid: true
       },
-      formIsValid: 'true'
+      formIsValid: true
     }
   },
   methods: {
+    clearvalidity(keyValue, event) {
+      let inputValue = event.target.value;
+      if(keyValue == 'name') {
+        if(inputValue.length > 0) {
+          this.name.isValid = true;
+        } else {
+          this.name.isValid = false;
+        }
+      } else if(keyValue == 'email') {
+        if(inputValue.length > 0 && this.validEmail(inputValue)) {
+          this.email.isValid = true;
+        } else {
+          this.email.isValid = false;
+        }
+      } else if(keyValue == 'phone') {
+        if(inputValue.length > 0 && this.validPhone(inputValue)) {
+          this.phone.isValid = true;
+        } else{
+          this.phone.isValid = false;
+        }
+      } else if(keyValue == 'starting') {
+        if(inputValue.length > 0) {
+          this.starting.isValid = true;
+        } else {
+          this.starting.isValid = false;
+        }
+      } else if(keyValue == 'destination') {
+        if(inputValue.length > 0) {
+          this.destination.isValid = true;
+        } else {
+          this. destination.isValid = false;
+        }
+      } else if(keyValue == 'noOfPerson') {
+        if(inputValue.length > 0) {
+          this.noOfPerson.isValid = true;
+        } else { 
+          this.noOfPerson.isValid = false;
+        }
+      } else if(keyValue == 'finalDest') {
+        if(inputValue.length > 0) {
+          this.finalDest.isValid = true;
+        } else {
+          this.finalDest.isValid = false;
+        }
+      }
+    },
     validateForm() {
       this.formIsValid = true;
       if (this.name.val === '') {
@@ -156,10 +201,6 @@ export default {
       }
       if (this.noOfPerson.val === '') {
         this.noOfPerson.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.message.val === '') {
-        this.message.isValid = false;
         this.formIsValid = false;
       }
       if (this.finalDest.val === '') {

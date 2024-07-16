@@ -539,7 +539,7 @@
                         <div class="bookmark">
                         </div>
                     </div>
-                    <div @click="selectType(packageTypes.family)" class="frame-346581">
+                    <div @click="changeCounterStatus()" class="frame-346581">
                         <div class="frame-34676">
                             <img class="mask-group-6" src="@/assets/images/family.png" />
                         </div>
@@ -549,7 +549,7 @@
                             </span>
                         </div>
                     </div>
-                    <div @click="selectType(packageTypes.group)" class="frame-34659">
+                    <div @click="changeCounterStatusSec()" class="frame-34659">
                         <div class="container-2">
                             <div class="frame-34677">
                                 <img class="mask-group-7" src="@/assets/images/group.png" />
@@ -564,51 +564,104 @@
                         </div>
                     </div>
                 </div>
-                <div class="frame-34679">
-                    <p class="how-many-of-you-are-travelling-number-of-rooms">
-                        <span class="how-many-of-you-are-travelling-number-of-rooms-sub-22">How many of you are
-                            travelling?</span>
-                    </p>
-                </div>
-                <div class="frame-34687 flexedDivs">
-                    <div class="enter">
-                        <div class="frame-34678">
-                            <p class="room-2-adults">
-                                1 room, 2 adults
-                            </p>
-                        </div>
-                        <div class="room-counter">
-                            <p>Room</p>
-                            <div class="roomCount">
-                                <span class="counter-style" @click="decreaseRoomCount">-</span>
-                                <span>{{ form.roomsRequired }}</span>
-                                <span class="counter-style" @click="increaseRoomCount">+</span>
+                <div v-if="showCounterDiv === true" class="classic">
+                    <div class="frame-34679">
+                        <p class="how-many-of-you-are-travelling-number-of-rooms">
+                            <span class="how-many-of-you-are-travelling-number-of-rooms-sub-22">How many of you are
+                                travelling?</span>
+                        </p>
+                    </div>
+                    <div class="frame-34687 flexedDivs">
+                        <div class="enter">
+                            <div class="frame-34678">
+                                <p class="room-2-adults">
+                                    1 room, 2 adults
+                                </p>
                             </div>
-                        </div>
-                        <div class="people-count">
-                            <div class="person-count">
-                                <p>Adults(+12)</p>
-                                <div class="personCounter">
-                                    <span class="counter-style" @click="decreaseAdultCount">-</span>
-                                    <span>{{ form.adults }}</span>
-                                    <span class="counter-style" @click="increaseAdultCount">+</span>
+                            <div class="room-counter">
+                                <p>Room</p>
+                                <div class="roomCount">
+                                    <span class="counter-style" @click="decreaseRoomCount">-</span>
+                                    <span>{{ form.roomsRequired }}</span>
+                                    <span class="counter-style" @click="increaseRoomCount">+</span>
                                 </div>
                             </div>
-                            <div class="person-count">
-                                <p>Children</p>
-                                <div class="personCounter">
-                                    <span class="counter-style" @click="decreaseChildCount">-</span>
-                                    <span>{{ form.children }}</span>
-                                    <span class="counter-style" @click="increaseChildCount">+</span>
+                            <div class="people-count">
+                                <div class="person-count">
+                                    <p>Adults(+12)</p>
+                                    <div class="personCounter">
+                                        <span class="counter-style" @click="decreaseAdultCount">-</span>
+                                        <span>{{ form.adults }}</span>
+                                        <span class="counter-style" @click="increaseAdultCount">+</span>
+                                    </div>
                                 </div>
+                                <div class="person-count">
+                                    <p>Children</p>
+                                    <div class="personCounter">
+                                        <span class="counter-style" @click="decreaseChildCount">-</span>
+                                        <span>{{ form.children }}</span>
+                                        <span class="counter-style" @click="increaseChildCount">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-34688">
+                            <div @click="selectType(packageTypes.family)" class="frame-34683">
+                                <span class="continue">
+                                    Continue
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="frame-34688">
-                        <div class="frame-34683">
-                            <span class="continue">
-                                Continue
-                            </span>
+                </div>
+
+                <div v-if="showCounterDivSec === true" class="classic">
+                    <div class="frame-34679">
+                        <p class="how-many-of-you-are-travelling-number-of-rooms">
+                            <span class="how-many-of-you-are-travelling-number-of-rooms-sub-22">How many of you are
+                                travelling?</span>
+                        </p>
+                    </div>
+                    <div class="frame-34687 flexedDivs">
+                        <div class="enter">
+                            <div class="frame-34678">
+                                <p class="room-2-adults">
+                                    1 room, 2 adults
+                                </p>
+                            </div>
+                            <div class="room-counter">
+                                <p>Room</p>
+                                <div class="roomCount">
+                                    <span class="counter-style" @click="decreaseRoomCount">-</span>
+                                    <span>{{ form.roomsRequired }}</span>
+                                    <span class="counter-style" @click="increaseRoomCount">+</span>
+                                </div>
+                            </div>
+                            <div class="people-count">
+                                <div class="person-count">
+                                    <p>Adults(+12)</p>
+                                    <div class="personCounter">
+                                        <span class="counter-style" @click="decreaseAdultCount">-</span>
+                                        <span>{{ form.adults }}</span>
+                                        <span class="counter-style" @click="increaseAdultCount">+</span>
+                                    </div>
+                                </div>
+                                <div class="person-count">
+                                    <p>Children</p>
+                                    <div class="personCounter">
+                                        <span class="counter-style" @click="decreaseChildCount">-</span>
+                                        <span>{{ form.children }}</span>
+                                        <span class="counter-style" @click="increaseChildCount">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-34688">
+                            <div @click="selectType(packageTypes.group)" class="frame-34683">
+                                <span class="continue">
+                                    Continue
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -691,9 +744,20 @@
                 </div>
                 <div class="frame-1252">
                     <div class="frame-1251">
-                        <input type="text" class="name formFields" placeholder="Enter your name" v-model="form.name" />
-                        <input type="number" class="phone-no formFields" placeholder="Enter your number" v-model="form.mobile" />
-                        <input type="email" class="email-id formFields" placeholder="Enter your email" v-model="form.email" />>
+                        <input @input="clearValidity('name', $event)" @blur="clearValidity('name', $event)" type="text" class="name formFields" placeholder="Enter your name" v-model="form.name" />
+                        <transition name="fade">
+                            <p class="redText" v-if="!nameIsValid">Name is required.</p>
+                        </transition>
+                        <input @input="clearValidity('phone', $event)" @blur="clearValidity('phone', $event)" type="number" class="phone-no formFields" placeholder="Enter your number"
+                            v-model="form.mobile" />
+                        <transition name="fade">
+                            <p class="redText" v-if="!phoneIsValid">Phone Number is required.</p>
+                        </transition>
+                        <input @input="clearValidity('email', $event)" @blur="clearValidity('email', $event)" type="email" class="email-id formFields" placeholder="Enter your email"
+                            v-model="form.email" />
+                        <transition name="fade">
+                            <p class="redText" v-if="!emailIsValid">Email is required.</p>
+                        </transition>
                     </div>
 
                     <button class="submit" type="submit">
@@ -772,13 +836,71 @@ export default {
             },
             roomCounter: 0,
             adultCounter: 0,
-            childCounter: 0
+            childCounter: 0,
+            showCounterDiv: false,
+            showCounterDivSec: false,
+            nameIsValid: true,
+            phoneIsValid: true,
+            emailIsValid: true,
+            formIsValid: true
         };
     },
     methods: {
         ...mapActions(['fetchCityData', 'registerTripData']),
         fetchData() {
             this.fetchCityData();
+        },
+        clearValidity(keyvalue, event) {
+            let inputValue = event.target.value;
+            if (keyvalue == 'name') {
+                if (inputValue.length > 0) {
+                    this.nameIsValid = true;
+                } else {
+                    this.nameIsValid = false;
+                }
+            } else if (keyvalue == 'phone') {
+                if (inputValue.length > 0 || this.validPhone(inputValue)) {
+                    this.phoneIsValid = true;
+                } else {
+                    this.phoneIsValid = false;
+                }
+            } else if (keyvalue == 'email') {
+                if (inputValue > 0 || this.validEmail(inputValue)) {
+                    this.emailIsValid = true;
+                } else {
+                    this.emailIsValid = false;
+                }
+            }
+        },
+        validateForm() {
+            this.formIsValid = true;
+            if (this.form.name === '') {
+                this.nameIsValid = false;
+                this.formIsValid = false;
+            }
+            if (this.form.mobile === '' || !this.validPhone(this.form.mobile)) {
+                this.phoneIsValid = false;
+                this.formIsValid = false;
+            }
+            if (this.form.email === '' || !this.validEmail(this.form.email)) {
+                this.emailIsValid = false;
+                this.formIsValid = false;
+            }
+        },
+        validEmail(email) {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(email);
+        },
+        validPhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        },
+        changeCounterStatus() {
+            this.showCounterDiv = !this.showCounterDiv;
+            console.log('abababababababab', this.showCounterDiv);
+        },
+        changeCounterStatusSec() {
+            this.showCounterDivSec = !this.showCounterDivSec;
         },
         increaseRoomCount() {
             this.form.roomsRequired++;
@@ -835,6 +957,11 @@ export default {
         },
         async submitForm() {
             console.log('Form Data:', this.form);
+            this.validateForm();
+
+            if(!this.formIsValid) {
+                return;
+            }
 
             const formData = new FormData();
             for (const key in this.form) {
@@ -926,5 +1053,21 @@ span.counter-style {
     text-align: center;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+  transform: translateX(30px 0.3s ease-in-out);
+  transform: translateY(0);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.redText{
+  color: red;
 }
 </style>

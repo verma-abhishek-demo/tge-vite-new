@@ -9,15 +9,15 @@
             <div class="flexItems">
                 <div class="col-md-7">
                     <div class="red-line">
-                        <span>{{ packageNames.package_name }}</span>
+                        <span>{{ packageNames?.package_name }}</span>
                     </div>
                 </div>
 
                 <div class="col-md-5">
                     <div class="trip-rating">
-                        <p class="dummyTxtOne">{{ packageNames.night }} Nights / {{ packageNames.days }} Days</p>
+                        <p class="dummyTxtOne">{{ packageNames?.night }} Nights / {{ packageNames?.days }} Days</p>
                         <span class="starImg"><img src="@/assets/images/banner-star.png" /></span>&nbsp;
-                        <span class="dark-text">{{ packageNames.rating }} / 5</span>&nbsp;
+                        <span class="dark-text">{{ packageNames?.rating }} / 5</span>&nbsp;
                         <span class="light-text">(253 reviews)</span>
                     </div>
                 </div>
@@ -51,20 +51,20 @@
             <div class="left-side">
                 <div class="overview-1">
                     <h1 class="left-side-hdng">Overview</h1>
-                    <div v-html="packageNames.overview"></div>
+                    <div v-html="packageNames?.overview"></div>
                 </div>
                 <div class="overview-2">
-                    <p class="overview-2-text">{{ packageNames.package_routing }}</p>
+                    <p class="overview-2-text">{{ packageNames?.package_routing }}</p>
                 </div>
                 <div class="overview-3">
                     <p class="boldHdng">Explore The Area</p>
-                    <div v-html="packageNames.explore_the_area"></div>
+                    <div v-html="packageNames?.explore_the_area"></div>
                 </div>
                 <div class="overview-4">
                     <p class="boldHdng">Popular Amenities</p>
                     <img :src="noImg" />
                     <div class="amenties-row">
-                        <div class="amenties-row-data" v-for="activity in packageNames.amenities" :key="activity">
+                        <div class="amenties-row-data" v-for="activity in packageNames?.amenities" :key="activity">
                             <img v-if="activity.icon" :src="activity.icon" />
                             <img v-else src="https://dummyimage.com/30.png/09f/fff" />
                             <p>{{ activity.ammenity }}</p>
@@ -73,8 +73,8 @@
                 </div>
                 <div class="overview-5">
                     <p class="boldHdng">Services</p>
-                    <div v-if="packageNames.servies" class="amenties-row">
-                        <div class="amenties-row-data" v-for="activity in packageNames.servies" :key="activity">
+                    <div v-if="packageNames?.servies" class="amenties-row">
+                        <div class="amenties-row-data" v-for="activity in packageNames?.servies" :key="activity">
                             <img :src="activity.icon" />
                             <p>{{ activity.service }}</p>
                         </div>
@@ -87,8 +87,8 @@
                 </div>
                 <div class="overview-5">
                     <p class="boldHdng">Activities</p>
-                    <div v-if="packageNames.activities" class="amenties-row">
-                        <div class="amenties-row-data" v-for="activity in packageNames.activities" :key="activity">
+                    <div v-if="packageNames?.activities" class="amenties-row">
+                        <div class="amenties-row-data" v-for="activity in packageNames?.activities" :key="activity">
                             <img :src="activity.icon" />
                             <p>{{ activity.activity }}</p>
                         </div>
@@ -103,7 +103,7 @@
             <div class="right-side">
                 <h1 class="right-side-hdng">Gallery</h1>
                 <div class="imgGallery" ref="imgGallery">
-                    <img :src="image" v-for="image in packageNames.gallery_images" :key="image" />
+                    <img :src="image" v-for="image in packageNames?.gallery_images" :key="image" />
 
 
                 </div>
@@ -112,19 +112,39 @@
                     <form @submit.prevent="submitForm">
                         <div class="inputForm">
                             <label for="name">Name</label>
-                            <input v-model="inputName" type="text" id="name" class="nameInput" />
+                            <input @input="clearValidity('inputName', $event)"
+                                @blur="clearValidity('inputName', $event)" v-model="inputName.val" type="text" id="name"
+                                class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputName.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="email">Email</label>
-                            <input v-model="inputEmail" type="email" id="email" class="nameInput" />
+                            <input @input="clearValidity('inputEmail', $event)"
+                                @blur="clearValidity('inputEmail', $event)" v-model="inputEmail.val" type="email"
+                                id="email" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputEmail.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="number">Number</label>
-                            <input v-model="inputNumber" type="text" id="number" class="nameInput" />
+                            <input @input="clearValidity('inputNumber', $event)"
+                                @blur="clearValidity('inputNumber', $event)" v-model="inputNumber.val" type="text"
+                                id="number" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputNumber.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="guest">Number of Guest</label>
-                            <input v-model="inputGuest" type="number" id="guest" class="nameInput" />
+                            <input @input="clearValidity('inputGuest', $event)"
+                                @blur="clearValidity('inputGuest', $event)" v-model="inputGuest.val" type="number"
+                                id="guest" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputGuest.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="formBtn">
                             <button type="submit" class="btn">Submit</button>
@@ -180,26 +200,46 @@
             <div class="right-side">
                 <h1 class="right-side-hdng">Gallery</h1>
                 <div class="imgGallery" ref="imgGallery">
-                    <img :src="image" v-for="image in packageNames.gallery_images" :key="image" />
+                    <img :src="image" v-for="image in packageNames?.gallery_images" :key="image" />
                 </div>
                 <div class="right-form">
                     <p>GET FREE QUOTES</p>
                     <form @submit.prevent="submitForm">
                         <div class="inputForm">
                             <label for="name">Name</label>
-                            <input v-model="inputName" type="text" id="name" class="nameInput" />
+                            <input @input="clearValidity('inputName', $event)"
+                                @blur="clearValidity('inputName', $event)" v-model="inputName.val" type="text" id="name"
+                                class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputName.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="email">Email</label>
-                            <input v-model="inputEmail" type="email" id="email" class="nameInput" />
+                            <input @input="clearValidity('inputEmail', $event)"
+                                @blur="clearValidity('inputEmail', $event)" v-model="inputEmail.val" type="email"
+                                id="email" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputEmail.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="number">Number</label>
-                            <input v-model="inputNumber" type="text" id="number" class="nameInput" />
+                            <input @input="clearValidity('inputNumber', $event)"
+                                @blur="clearValidity('inputNumber', $event)" v-model="inputNumber.val" type="text"
+                                id="number" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputNumber.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="guest">Number of Guest</label>
-                            <input v-model="inputGuest" type="number" id="guest" class="nameInput" />
+                            <input @input="clearValidity('inputGuest', $event)"
+                                @blur="clearValidity('inputGuest', $event)" v-model="inputGuest.val" type="number"
+                                id="guest" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputGuest.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="formBtn">
                             <button type="submit" class="btn">Submit</button>
@@ -221,7 +261,7 @@
                         <div class="col">
                             <h2 class="section-title">TOUR INCLUSIONS</h2>
                             <ul class="list-unstyled">
-                                <li class="list-item" v-for="inclusion in packageNames.inc_meta" :key="inclusion">
+                                <li class="list-item" v-for="inclusion in packageNames?.inc_meta" :key="inclusion">
                                     <img src="@/assets/images/Star-red.png" />
                                     <p>{{ inclusion.tour_inc }}</p>
                                 </li>
@@ -232,7 +272,7 @@
                         <div class="col">
                             <h2 class="section-title">TOUR EXCLUSIONS</h2>
                             <ul class="list-unstyled">
-                                <li class="list-item" v-for="exclusion in packageNames.exc_meta" :key="exclusion">
+                                <li class="list-item" v-for="exclusion in packageNames?.exc_meta" :key="exclusion">
                                     <img src="@/assets/images/Star-red.png" />
                                     <p>{{ exclusion.tour_exc }}</p>
                                 </li>
@@ -245,26 +285,46 @@
             <div class="right-side">
                 <h1 class="right-side-hdng">Gallery</h1>
                 <div class="imgGallery" ref="imgGallery">
-                    <img :src="image" v-for="image in packageNames.gallery_images" :key="image" />
+                    <img :src="image" v-for="image in packageNames?.gallery_images" :key="image" />
                 </div>
                 <div class="right-form">
                     <p>GET FREE QUOTES</p>
                     <form @submit.prevent="submitForm">
                         <div class="inputForm">
                             <label for="name">Name</label>
-                            <input v-model="inputName" type="text" id="name" class="nameInput" />
+                            <input @input="clearValidity('inputName', $event)"
+                                @blur="clearValidity('inputName', $event)" v-model="inputName.val" type="text" id="name"
+                                class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputName.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="email">Email</label>
-                            <input v-model="inputEmail" type="email" id="email" class="nameInput" />
+                            <input @input="clearValidity('inputEmail', $event)"
+                                @blur="clearValidity('inputEmail', $event)" v-model="inputEmail.val" type="email"
+                                id="email" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputEmail.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="number">Number</label>
-                            <input v-model="inputNumber" type="text" id="number" class="nameInput" />
+                            <input @input="clearValidity('inputNumber', $event)"
+                                @blur="clearValidity('inputNumber', $event)" v-model="inputNumber.val" type="text"
+                                id="number" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputNumber.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="guest">Number of Guest</label>
-                            <input v-model="inputGuest" type="number" id="guest" class="nameInput" />
+                            <input @input="clearValidity('inputGuest', $event)"
+                                @blur="clearValidity('inputGuest', $event)" v-model="inputGuest.val" type="number"
+                                id="guest" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputGuest.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="formBtn">
                             <button type="submit" class="btn">Submit</button>
@@ -288,13 +348,13 @@
                             <ul class="list-unstyled">
                                 <li class="list-item">
                                     <img src="@/assets/images/Star-red.png" />
-                                    <p v-html="packageNames.cancel_content"></p>
+                                    <p v-html="packageNames?.cancel_content"></p>
                                 </li>
                             </ul>
                             <ul class="list-unstyled">
                                 <li class="list-item">
                                     <img src="@/assets/images/Star-red.png" />
-                                    <p v-html="packageNames.payment_policy"></p>
+                                    <p v-html="packageNames?.payment_policy"></p>
                                 </li>
                             </ul>
 
@@ -306,26 +366,46 @@
             <div class="right-side">
                 <h1 class="right-side-hdng">Gallery</h1>
                 <div class="imgGallery" ref="imgGallery">
-                    <img :src="image" v-for="image in packageNames.gallery_images" :key="image" />
+                    <img :src="image" v-for="image in packageNames?.gallery_images" :key="image" />
                 </div>
                 <div class="right-form">
                     <p>GET FREE QUOTES</p>
                     <form @submit.prevent="submitForm">
                         <div class="inputForm">
                             <label for="name">Name</label>
-                            <input v-model="inputName" type="text" id="name" class="nameInput" />
+                            <input @input="clearValidity('inputName', $event)"
+                                @blur="clearValidity('inputName', $event)" v-model="inputName.val" type="text" id="name"
+                                class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputName.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="email">Email</label>
-                            <input v-model="inputEmail" type="email" id="email" class="nameInput" />
+                            <input @input="clearValidity('inputEmail', $event)"
+                                @blur="clearValidity('inputEmail', $event)" v-model="inputEmail.val" type="email"
+                                id="email" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputEmail.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="number">Number</label>
-                            <input v-model="inputNumber" type="text" id="number" class="nameInput" />
+                            <input @input="clearValidity('inputNumber', $event)"
+                                @blur="clearValidity('inputNumber', $event)" v-model="inputNumber.val" type="text"
+                                id="number" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputNumber.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="inputForm">
                             <label for="guest">Number of Guest</label>
-                            <input v-model="inputGuest" type="number" id="guest" class="nameInput" />
+                            <input @input="clearValidity('inputGuest', $event)"
+                                @blur="clearValidity('inputGuest', $event)" v-model="inputGuest.val" type="number"
+                                id="guest" class="nameInput" />
+                            <transition name="fade">
+                                <p class="redText" v-if="!inputGuest.isvalid">No of persons should not be empty.</p>
+                            </transition>
                         </div>
                         <div class="formBtn">
                             <button type="submit" class="btn">Submit</button>
@@ -385,14 +465,6 @@ export default {
             let packageName = this.getpackageData;
             return packageName[0];
         },
-        packageHotDetails() {
-            let packageHotDetail = this.getpackageData;
-            console.log('roggg', packageHotDetail);
-            //let finalDetailResult = packageHotDetail.find((obj) => obj.daywise_meta);
-            console.log('Hanuman', finalDetailResult);
-            return finalDetailResult;
-            
-        },
         loadError() {
             return this.getError;
         },
@@ -401,22 +473,99 @@ export default {
         return {
             activeSection: 'overview',
             routeData: this.$route.params.id,
-            inputName: '',
-            inputEmail: '',
-            inputNumber: '',
-            inputGuest: ''
+            inputName: {
+                val: '',
+                isvalid: true
+            },
+            inputEmail: {
+                val: '',
+                isvalid: true
+            },
+            inputNumber: {
+                val: '',
+                isvalid: true
+            },
+            inputGuest: {
+                val: '',
+                isvalid: true
+            },
+            formIsValid: true
         }
     },
 
     methods: {
         ...mapActions(['fetchpackageData']),
+        clearValidity(keyValue, event) {
+            let inputValue = event.target.value;
+            if (keyValue == 'inputName') {
+                if (inputValue.length > 0) {
+                    this.inputName.isvalid = true;
+                } else {
+                    this.inputName.isValid = false;
+                }
+            } else if (keyValue == 'inputEmail') {
+                if (inputValue.length > 0 && this.validEmail(inputValue)) {
+                    this.inputEmail.isvalid = true;
+                } else {
+                    this.inputEmail.isvalid = false;
+                }
+            } else if (keyValue == 'inputNumber') {
+                if (inputValue.length > 0 && this.validPhone(inputValue)) {
+                    this.inputNumber.isvalid = true;
+                } else {
+                    this.inputNumber.isvalid = false;
+                }
+            } else if (keyValue == 'inputGuest') {
+                if (inputValue.length > 0) {
+                    this.inputGuest.isvalid = true
+                } else {
+                    this.inputGuest.isvalid = false;
+                }
+            }
+        },
+        validateForm() {
+            this.formIsValid = true;
+            if (this.inputName.val === '') {
+                this.inputName.isvalid = false;
+                this.formIsValid = false;
+            }
+            if (this.inputEmail.val === '' || !this.validEmail(this.inputEmail.val)) {
+                this.inputEmail.isvalid = false;
+                this.formIsValid = false;
+            }
+            if (this.inputNumber.val === '' || !this.validPhone(this.inputNumber.val)) {
+                this.inputNumber.isvalid = false;
+                this.formIsValid = false;
+            }
+            if (this.inputGuest.val === '') {
+                this.inputGuest.isvalid = false;
+                this.formIsValid = false;
+            }
+        },
+        validPhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        },
+        validEmail(email) {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(email);
+        },
+        showAlertSuccess() {
+            this.$swal("Thank You For Bookin With Us",
+                "Thank you for your reservation. We’re dedicated to giving you the best experience possible. If you have any questions, feel free to get in touch.", "success");
+        },
         async submitForm() {
+            this.validateForm();
+
+            if (!this.formIsValid) {
+                return;
+            }
             const formData = {
-                name: this.inputName,
-                email: this.inputEmail,
-                mobile: this.inputNumber,
+                name: this.inputName.val,
+                email: this.inputEmail.val,
+                mobile: this.inputNumber.val,
                 destination: '',
-                total_no_travelers: this.inputGuest,
+                total_no_travelers: this.inputGuest.val,
                 departuredate: '',
                 returndate: '',
                 adminEamil: '',
@@ -434,15 +583,17 @@ export default {
                     }
                 }).then((response) => {
                     console.log('Enquiry-Data', response)
-                    alert('Success!!!');
                 })
+                this.showAlertSuccess();
+                this.inputName.val = '';
+                this.inputEmail.val = '';
+                this.inputNumber.val = '';
+                this.inputGuest.val = '';
+                this.formIsValid = true;
             } catch (error) {
                 console.error('Error', error);
             }
-            this.inputName = '';
-            this.inputEmail = '';
-            this.inputNumber = '';
-            this.inputGuest = '';
+
         },
         fetchData() {
             //const packageId = this.$route.params.id;
@@ -551,6 +702,11 @@ li.list-item {
 .wrapper {
     width: 1200px;
     margin: auto;
+}
+
+.redText {
+    color: red;
+    font-size: 12px !important;
 }
 
 .sectionOne {
@@ -844,5 +1000,17 @@ button.btn {
 
 .package-display {
     display: flex;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+    transform: translateX(30px 0.3s ease-in-out);
+    transform: translateY(0);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

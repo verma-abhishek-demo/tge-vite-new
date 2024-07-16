@@ -3,9 +3,11 @@
         <footer class="footer">
             <div class="container">
                 <div class="wrapper">
-                    <div class="col-md-2 footer-logo">
-                        <img src="@/assets/images/whats_app_image_20240503_at_14072.png" alt="Logo">
-                    </div>
+                    <router-link to="/">
+                        <div class="col-md-2 footer-logo">
+                            <img src="@/assets/images/whats_app_image_20240503_at_14072.png" alt="Logo">
+                        </div>
+                    </router-link>
                     <div class="row text-md-start footer-links">
                         <div class="col-md-2">
                             <h5>ABOUT TGE</h5>
@@ -37,7 +39,8 @@
                         <div class="col-md-3">
                             <h5>Travel Destinations</h5>
                             <div class="row ftr-imgs g-2">
-                                <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }" v-for="(trip, index) in topPackages" :key="index">
+                                <router-link :to="{ name: 'DestinationInfo', params: { citySlug: trip.slug } }"
+                                    v-for="(trip, index) in topPackages" :key="index">
                                     <div class="col-4 topRow">
                                         <img :src="trip.main_image" alt="Beaches">
                                         <p>{{ trip.name }}</p>
@@ -147,7 +150,9 @@ img.ftrIcons {
     height: 30px !important;
 }
 
-
+.footer-logo img {
+    height: 56px !important;
+}
 
 .footer h5 {
     margin-bottom: 20px;

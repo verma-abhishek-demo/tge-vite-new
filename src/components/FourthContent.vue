@@ -21,86 +21,26 @@
         <div class="container tours">
             <div class="slides" ref="slides">
                     <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-honeymoon.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-family.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-adventure.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-heritage.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-solo.png" />
-                        </router-link>
-                    </div>
-
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-group.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-hiking.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-luxury.png" />
+                        <router-link to="/tours_and_destination" v-for="trip in trendingTrips" :key="trip">
+                            <div class="tripNames">
+                                <img :src="trip?.banner_images_main" />
+                                <div class="tripDetails">
+                                    <img :src="trip?.banner_images" />
+                                    <p>{{ trip?.package_cat_name }}</p>
+                                </div>
+                            </div>
                         </router-link>
                     </div>
                     <!-- Duplicate the images for seamless looping -->
                     <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-honeymoon.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-family.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-adventure.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-heritage.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-solo.png" />
-                        </router-link>
-                    </div>
-
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-group.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-hiking.png" />
-                        </router-link>
-                    </div>
-                    <div class="right-side-img">
-                        <router-link to="/tours_and_destination">
-                            <img src="@/assets/images/new-luxury.png" />
+                        <router-link to="/tours_and_destination" v-for="trip in trendingTrips" :key="trip">
+                            <div class="tripNames">
+                                <img :src="trip?.banner_images_main" />
+                                <div class="tripDetails">
+                                    <img :src="trip?.banner_images" />
+                                    <p>{{ trip?.package_cat_name }}</p>
+                                </div>
+                            </div>
                         </router-link>
                     </div>
                 </div>
@@ -109,11 +49,32 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 export default {
+    computed: {
+        ...mapGetters(['getTrendTrip']),
+    },
     mounted() {
         this.animateSlides(1);
     },
+    data() {
+        return {
+            trendingTrips: null
+        }
+    },
     methods : {
+        ...mapActions(['fetchtrendtrip']),
+        fetchTripDetails() {
+            if(this.getTrendTrip && this.getTrendTrip.data && this.getTrendTrip.data.length > 0) {
+                let results = this.getTrendTrip.data;
+                this.trendingTrips = results;
+                console.log('om Shivay', this.trendingTrips);
+                console.log('JaiRam', this.getTrendTrip.data);
+            } else {
+                console.error('No activity data found');
+            }
+
+        },
          animateSlides(position) {
             const slides = this.$refs.slides;
             const slideWidth = slides.offsetWidth / 2;
@@ -124,10 +85,13 @@ export default {
             slides.style.transform = `translateX(${position}px)`;
             requestAnimationFrame(this.animateSlides);
         }
+    },
+    async created() {
+        await this.fetchtrendtrip();
+        await this.fetchTripDetails();
     }
 }
 </script>
-
 <style scoped>
 .wrapper {
     width: 1200px;
@@ -143,6 +107,33 @@ export default {
     font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.tripNames img {
+    max-height: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.right-side-img a {
+    width: 250px;
+}
+
+.tripDetails {
+    display: flex;
+    height: 27px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.tripDetails img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.tripDetails p {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .red-text {
@@ -230,13 +221,15 @@ a {
 .slides {
     display: flex;
     width: 200%; /* Adjust width to fit all images */
-    animation: slide 10s linear infinite;
+    animation: slide 20s linear infinite;
 }
 
 .right-side-img {
-    width: 35%; /* Adjust width to fit the container properly */
-    flex-shrink: 0; /* Prevent shrinking */
+    width: 100%;
+    flex-shrink: 0;
     margin: 10px;
+    display: flex;
+    gap: 20px;
 }
 
 .right-side-img img {

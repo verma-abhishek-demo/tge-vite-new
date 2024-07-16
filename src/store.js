@@ -13,6 +13,7 @@ const store = createStore({
             trendPackage: [],
             currentPage: 1,
             activity: [],
+            trendTrip: [],
             error: null
         }
     },
@@ -43,6 +44,9 @@ const store = createStore({
         },
         setActivity(state, payload) {
             state.activity = payload;
+        },
+        setTrendTrip(state, payload) {
+            state.trendTrip = payload;
         }
     },
     actions: {
@@ -114,6 +118,15 @@ const store = createStore({
             } catch (error) {
                 commit('setError', error);
             }
+        },
+        async fetchtrendtrip() {
+            try {
+                const response = await axios.get(`${baseURL}/apis/packages/category`);
+                const { data } = response.data;
+                this.commit('setTrendTrip', data);
+            } catch (error) {
+                commit('setError', error);
+            }
         }
 
     },
@@ -144,6 +157,9 @@ const store = createStore({
         },
         getActivity(state) {
             return state.activity;
+        },
+        getTrendTrip(state) {
+            return state.trendTrip;
         }
     }
 });

@@ -127,6 +127,11 @@ export default {
     margin-bottom: 50px;
 }
 
+.card-title {
+    text-transform: capitalize;
+    font-size: 26px;
+}
+
 .spcaebtw {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -141,6 +146,12 @@ export default {
     font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.text-white {
+    margin-top: 20px;
+    border-radius: 7px;
+    border: none;
 }
 
 .red-text {
@@ -162,6 +173,8 @@ img.card-img {
 
 .card.bg-dark.text-middle {
     height: 173px;
+    border-radius: 7px;
+    border: none;
 }
 
 img.middle-img {
