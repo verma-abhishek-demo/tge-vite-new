@@ -1,5 +1,5 @@
 <template>
-    <div class="sectionOne">
+    <div :style="{ backgroundImage: `url(${packageNames?.pdf_image})` }" class="sectionOne">
         <div class="imgone">
             <img src="@/assets/images/page-down.png" />
         </div>
@@ -710,7 +710,6 @@ li.list-item {
 }
 
 .sectionOne {
-    background-image: url('@/assets/images/trip-info-bg.png');
     padding: 250px;
     background-repeat: no-repeat;
     background-size: cover;

@@ -19,7 +19,7 @@
             </div>
             <div class="spcaebtw row g-4">
                 <div class="col-lg-4">
-                    <router-link to="/inner_activity_page">
+                    <router-link :to="{ name: 'TripPackageInfo', params: { id: totalActivitiesOne.id } }">
                         <div class="card bg-dark text-white">
                             <img :src="totalActivitiesOne?.pdf_image" class="card-img" alt="Rock Climbing">
                             <div class="card-img-overlay d-flex align-items-end">
@@ -31,7 +31,7 @@
                     </router-link>
                 </div>
                 <div class="col-lg-4">
-                    <router-link to="/inner_activity_page" v-for="pckg in totalActivitiesTwo" :key="pckg">
+                    <router-link :to="{ name: 'TripPackageInfo', params: { id: pckg?.id } }" v-for="pckg in totalActivitiesTwo" :key="pckg">
                         <div class="card bg-dark text-middle card-margin">
                             <img :src="pckg?.pdf_image" class="middle-img" alt="Hiking">
                             <div class="card-img-overlay d-flex align-items-end">
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <router-link to="/inner_activity_page">
+                    <router-link :to="{ name: 'TripPackageInfo', params: { id: totalActivitiesThree?.id } }">
                         <div class="card bg-dark text-white">
                             <img :src="totalActivitiesThree?.pdf_image" class="card-img" alt="Rock Climbing">
                             <div class="card-img-overlay d-flex align-items-end">
@@ -95,14 +95,14 @@ export default {
             }
         },
         getActivitypageTwo() {
-            if(this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
+            if (this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
                 this.totalActivitiesTwo = this.getActivity.data.slice(1, 4);
             } else {
                 console.error('No activity data found');
             }
         },
         getActivitypageThree() {
-            if(this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
+            if (this.getActivity && this.getActivity.data && this.getActivity.data.length > 0) {
                 this.totalActivitiesThree = this.getActivity.data[5];
             } else {
                 console.error('No activity data found');
