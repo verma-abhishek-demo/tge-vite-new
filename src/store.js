@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import { baseURL } from '@/config';
+import { baseURL } from '@/config.js';
 import axios from 'axios';
 
 const store = createStore({
@@ -47,7 +47,7 @@ const store = createStore({
         },
         setTrendTrip(state, payload) {
             state.trendTrip = payload;
-        }
+        },
     },
     actions: {
         
@@ -84,7 +84,7 @@ const store = createStore({
                 const response = await fetch(`${baseURL}/apis/packages/package_with_city`);
                 const { data } = await response.json();
                 console.log('verAAA', data);
-                const filteredData = data.data.filter(item => item.citySlug == citySlug);
+                const filteredData = data.data.filter(item => item.package_name == citySlug);
                 console.log('vermaAbhi', filteredData);
                 commit('setCitySlugData', filteredData);
             } catch (error) {
@@ -119,7 +119,7 @@ const store = createStore({
                 commit('setError', error);
             }
         },
-        async fetchtrendtrip() {
+        async fetchtrendtrip({commit}) {
             try {
                 const response = await axios.get(`${baseURL}/apis/packages/category`);
                 const { data } = response.data;
@@ -127,7 +127,7 @@ const store = createStore({
             } catch (error) {
                 commit('setError', error);
             }
-        }
+        },
 
     },
     getters: {
@@ -160,7 +160,7 @@ const store = createStore({
         },
         getTrendTrip(state) {
             return state.trendTrip;
-        }
+        },
     }
 });
 

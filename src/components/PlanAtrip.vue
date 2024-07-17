@@ -773,7 +773,7 @@
 <script>
 import Calendar from 'primevue/calendar';
 import { mapActions, mapGetters } from 'vuex';
-import { baseURL } from '@/config';
+import { baseURL } from '@/config.js';
 import axios from 'axios';
 export default {
     components: {

@@ -1,8 +1,16 @@
 <template>
     <div class="wrapper">
-        <TripPackage v-for="tour in tourPackageList" :key="tour.key" :packageId="tour.id" :image="tour.pdf_image"
-            :title="tour.package_name" :price="tour.starting_cost" :rating="tour.rating" :days="Number(tour.days)"
-            :night="Number(tour.night)" />
+        <TripPackage 
+            v-for="tour in tourPackageList" 
+            :key="tour.id" 
+            :packageId="tour.id" 
+            :image="tour.pdf_image"
+            :title="tour.package_name" 
+            :price="tour.starting_cost" 
+            :rating="tour.rating" 
+            :days="Number(tour.days)"
+            :night="Number(tour.night)" 
+        />
     </div>
 </template>
 
@@ -30,10 +38,7 @@ export default {
     methods: {
         ...mapActions(['fetchData', 'fetchCitySlugData', 'fetchCityData']),
         async getCityWisePackage() {
-            console.log('CitySlug Data:', this.getCitySlugData);
-            let allData = this.getData;
             let citySlug = this.$route.params.citySlug;
-            console.log('CitySlug:', citySlug);
 
             if (citySlug) {
                 try {
@@ -46,33 +51,50 @@ export default {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     });
-                    console.log('API Response:', response.data);
                     let newData = response.data.data.data;
-
                     if (Array.isArray(newData)) {
                         this.tourPackageList = newData;
                     } else {
                         console.error('Unexpected response structure:', response.data.data.data);
                     }
-                    console.log('Tour Package List:', this.tourPackageList);
                 } catch (error) {
                     console.error('Error fetching city data:', error);
                 }
             } else {
-                this.tourPackageList = allData;
-                console.log('All Data:', this.tourPackageList);
+                this.tourPackageList = this.getData;
+            }
+        },
+        async fetchCategoryBasedPackages() {
+            let tripSlug = this.$route.params.tripSlug;
+            if (tripSlug) {
+                try {
+                    const response = await axios.get(`${baseURL}/apis/packages/categorybased?slug=${tripSlug}&page=1&limit=9`);
+                    this.tourPackageList = response.data.data.data;
+                    console.log('Rabbtaa', this.tourPackageList);
+                    console.log('Rabbtaa-url', tripSlug);
+                } catch (error) {
+                    console.error('Error fetching category-based packages:', error);
+                }
             }
         }
     },
     async created() {
-        await this.fetchData(this.getCurrentPage);
-        this.getCityWisePackage();
+        if (this.$route.params.tripSlug) {
+            await this.fetchCategoryBasedPackages();
+        } else {
+            await this.fetchData(this.getCurrentPage);
+            this.getCityWisePackage();
+        }
     },
     watch: {
-        '$route.params.citySlug': 'getCityWisePackage',
+        '$route.params.tripSlug': 'fetchCategoryBasedPackages',
         getCurrentPage() {
-            this.fetchData(this.getCurrentPage);
-            this.getCityWisePackage();
+            if (this.$route.params.tripSlug) {
+                this.fetchCategoryBasedPackages();
+            } else {
+                this.fetchData(this.getCurrentPage);
+                this.getCityWisePackage();
+            }
         }
     }
 };

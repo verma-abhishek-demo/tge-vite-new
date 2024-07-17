@@ -21,7 +21,7 @@
         <div class="container tours">
             <div class="slides" ref="slides">
                     <div class="right-side-img">
-                        <router-link to="/tours_and_destination" v-for="trip in trendingTrips" :key="trip">
+                        <router-link :to="{ name: 'TripTypePage', params: { tripSlug: trip.packageCateslug }}" v-for="trip in trendingTrips" :key="trip">
                             <div class="tripNames">
                                 <img :src="trip?.banner_images_main" />
                                 <div class="tripDetails">
@@ -33,7 +33,7 @@
                     </div>
                     <!-- Duplicate the images for seamless looping -->
                     <div class="right-side-img">
-                        <router-link to="/tours_and_destination" v-for="trip in trendingTrips" :key="trip">
+                        <router-link :to="{ name: 'TripTypePage', params: { tripSlug: trip.packageCateslug }}" v-for="trip in trendingTrips" :key="trip">
                             <div class="tripNames">
                                 <img :src="trip?.banner_images_main" />
                                 <div class="tripDetails">
@@ -68,6 +68,9 @@ export default {
             if(this.getTrendTrip && this.getTrendTrip.data && this.getTrendTrip.data.length > 0) {
                 let results = this.getTrendTrip.data;
                 this.trendingTrips = results;
+                //let tripSlug = results.map(obj => obj.packageCateslug);
+                //let tripSlug = results.find(obj => obj.packageCateslug);
+
                 console.log('om Shivay', this.trendingTrips);
                 console.log('JaiRam', this.getTrendTrip.data);
             } else {

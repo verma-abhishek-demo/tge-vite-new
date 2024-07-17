@@ -7,7 +7,7 @@
                     <div class="red-line">
                         <span class="title">Explore Our </span><br>
                         <span class="title">Best</span>&nbsp;
-                        <span class="title red-text">Activities Packages</span>
+                        <span class="title red-text">Activities Packages</span>   
                     </div>
                 </div>
                 <div class="col-md-6">

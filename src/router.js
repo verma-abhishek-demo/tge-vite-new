@@ -7,6 +7,7 @@ import ContactPage from './components/ContactPage.vue';
 import TripPackageInfo from './components/TripPackageInfo.vue';
 import DestinationInfo from './components/DestinationInfo.vue';
 import ExplorePackages from './components/ExplorePackages.vue';
+import TripTypePage from './components/TripTypePage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,7 +20,8 @@ const router = createRouter({
         { path: '/contact_page', component: ContactPage, name: 'ContactPage' },
         { path: '/trip_package_info/:id', component: TripPackageInfo, name: 'TripPackageInfo', props: true },
         { path: '/destination_info/:citySlug', component: DestinationInfo, name: 'DestinationInfo', props: true },
-        { path: '/explore_packages', component: ExplorePackages, name: 'ExplorePackage' }
+        { path: '/explore_packages', component: ExplorePackages, name: 'ExplorePackage' },
+        { path: '/trending_trips/:tripSlug', component: TripTypePage, name: 'TripTypePage', props: true }
     ]
 });
 
