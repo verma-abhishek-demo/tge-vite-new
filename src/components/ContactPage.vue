@@ -8,22 +8,39 @@
                 <!-- Left Side: Contact Form -->
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="contact-form w-100">
-                        <form>
+                        <form @submit.prevent="submitForm">
                             <div class="form-group inputForm">
                                 <label class="inputLabel" for="name">Name</label>
-                                <input type="text" class="form-control inputField" id="name" required>
+                                <input @input="clearValidity('name', $event)" @blur="clearValidity('name', $event)"
+                                    v-model="name.val" type="text" class="form-control inputField" id="name">
+                                <transition name="fade">
+                                    <p class="redText" v-if="!name.isValid">Name is required.</p>
+                                </transition>
                             </div>
                             <div class="form-group">
                                 <label class="inputLabel" for="email">Email ID</label>
-                                <input type="email" class="form-control inputField" id="email" required>
+                                <input @input="clearValidity('email', $event)" @blur="clearValidity('email', $event)"
+                                    v-model="email.val" type="email" class="form-control inputField" id="email">
+                                <transition name="fade">
+                                    <p class="redText" v-if="!email.isValid">Email is required.</p>
+                                </transition>
                             </div>
                             <div class="form-group">
                                 <label class="inputLabel" for="phone">Phone No.</label>
-                                <input type="text" class="form-control inputField" id="phone" required>
+                                <input @input="clearValidity('phone', $event)" @blur="clearValidity('phone', $event)"
+                                    v-model="phone.val" type="text" class="form-control inputField" id="phone">
+                                <transition name="fade">
+                                    <p class="redText" v-if="!phone.isValid">Phone Number is required.</p>
+                                </transition>
                             </div>
                             <div class="form-group">
                                 <label class="inputLabel" for="message">Message</label>
-                                <textarea class="form-control inputField" id="message" rows="3" required></textarea>
+                                <textarea @input="clearValidity('message', $event)"
+                                    @blur="clearValidity('message', $event)" v-model="message.val"
+                                    class="form-control inputField" id="message" rows="3"></textarea>
+                                <transition name="fade">
+                                    <p class="redText" v-if="!message.isValid">Message is required.</p>
+                                </transition>
                             </div>
                             <button type="submit" class="btn submit-btn btn-block">Submit</button>
                         </form>
@@ -73,8 +90,132 @@
 </template>
 
 <script>
+import { baseURL } from '@/config';
+import axios from 'axios';
 export default {
+    data() {
+        return {
+            name: {
+                val: '',
+                isValid: true
+            },
+            email: {
+                val: '',
+                isValid: true
+            },
+            phone: {
+                val: '',
+                isValid: true
+            },
+            message: {
+                val: '',
+                isValid: true
+            },
+            formIsValid: true
+        }
+    },
+    methods: {
+        clearValidity(keyvalue, event) {
+            let inputValue = event.target.value;
+            if (keyvalue == 'name') {
+                if (inputValue.length > 0) {
+                    this.name.isValid = true;
+                } else {
+                    this.name.isValid = false;
+                }
+            } else if (keyvalue == 'email') {
+                if (inputValue.length > 0 || this.validEmail(inputValue)) {
+                    this.email.isValid = true;
+                } else {
+                    this.email.isValid = false;
+                }
+            } else if (keyvalue == 'phone') {
+                if (inputValue.length > 0 || this.validPhone(inputValue)) {
+                    this.phone.isValid = true;
+                } else {
+                    this.phone.isValid = false;
 
+                }
+            } else if (keyvalue == 'message') {
+                if (inputValue.length > 0) {
+                    this.message.isValid = true;
+                } else {
+                    this.message.isValid = false;
+                }
+            }
+        },
+        validateForm() {
+            this.formIsValid = true;
+            if (this.name.val === '') {
+                this.name.isValid = false;
+                this.formIsValid = false;
+            }
+            if (this.email.val === '' || !this.validEmail(this.email.val)) {
+                this.email.isValid = false;
+                this.formIsValid = false;
+            }
+            if (this.phone.val === '' || !this.validPhone(this.phone.val)) {
+                this.phone.isValid = false;
+                this.formIsValid = false;
+            }
+            if (this.message.val === '') {
+                this.message.isValid = false;
+                this.formIsValid = false;
+            }
+        },
+        validEmail(email) {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(email);
+        },
+        validPhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        },
+        showAlertSuccess() {
+            this.$swal("Thank You For Bookin With Us",
+                "Thank you for your reservation. We’re dedicated to giving you the best experience possible. If you have any questions, feel free to get in touch.", "success");
+        },
+        async submitForm() {
+            this.validateForm();
+            if (!this.formIsValid) {
+                return;
+            }
+            const formData = {
+                name: this.name.val,
+                email: this.email.val,
+                mobile: this.phone.val,
+                message: this.message.val,
+                destination: '',
+                total_no_travelers: '',
+                departuredate: '',
+                returndate: '',
+                adminEamil: ''
+            }
+            console.log('Form_data:', this.name.val, this.email.val, this.phone.val, this.message.val);
+
+            const contactForm = new FormData();
+            for (const key in formData) {
+                contactForm.append(key, formData[key]);
+            }
+
+            try {
+                await axios.post(`${baseURL}/apis/query/savequery`, contactForm, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((response) => {
+                    console.log('Enquiry-Data', response);
+                })
+                this.showAlertSuccess();
+                this.name.val = '';
+                this.email.val = '';
+                this.phone.val = '';
+                this.message.val = '';
+            } catch (error) {
+                console.error('Error', error);
+            }
+        }
+    }
 }
 </script>
 
@@ -112,6 +253,14 @@ span.red-text {
 .submit-btn {
     background-color: #dc3545;
     color: white;
+    margin-top: 26px;
+    padding: 10px 70px;
+    font-size: 15px;
+}
+
+.submit-btn:hover {
+    background: transparent !important;
+    border: 1px solid #dc3545;
 }
 
 .trip-card {
@@ -124,7 +273,8 @@ span.red-text {
 }
 
 .trip-card .card-body {
-    background-color: #941a21a3;;
+    background-color: #941a21a3;
+    ;
     color: white;
     width: 90px;
     position: absolute;
@@ -180,5 +330,21 @@ label.inputLabel {
     border-bottom: 2px solid #941a21a3;
     border-radius: 0;
     background: transparent;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+  transform: translateX(30px 0.3s ease-in-out);
+  transform: translateY(0);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.redText{
+  color: red;
 }
 </style>
