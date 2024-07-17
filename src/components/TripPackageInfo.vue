@@ -927,6 +927,7 @@ input#name {
 .nameInput {
     border: 1px solid #ff000052;
     border-radius: 3px;
+    background: #fff;
 }
 
 .formBtn {
