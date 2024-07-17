@@ -70,7 +70,6 @@ export default {
                 this.trendingTrips = results;
                 //let tripSlug = results.map(obj => obj.packageCateslug);
                 //let tripSlug = results.find(obj => obj.packageCateslug);
-
                 console.log('om Shivay', this.trendingTrips);
                 console.log('JaiRam', this.getTrendTrip.data);
             } else {

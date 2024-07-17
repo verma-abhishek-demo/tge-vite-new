@@ -9,7 +9,9 @@
             :price="tour.starting_cost" 
             :rating="tour.rating" 
             :days="Number(tour.days)"
-            :night="Number(tour.night)" 
+            :night="Number(tour.night)"
+            :orignalPrice="tour.discount"
+            :services="tour.servies"
         />
     </div>
 </template>

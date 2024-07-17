@@ -13,13 +13,10 @@
                             <h5 class="card-title">{{ title }}</h5>
                         </div>
                         <p class="card-text">
-                            <img class="trip-icon" src="@/assets/images/hotel-stay.png" /> Hotel Stay
-                            <img class="trip-icon" src="@/assets/images/meals.png" /> Meals
-                            <img class="trip-icon" src="@/assets/images/tour-guide.png" /> Tour Guide
-                            <img class="trip-icon" src="@/assets/images/sightseeing.png" /> Sightseeing
+                            <span v-for="serve in services" :key="serve"><img class="trip-icon" :src="serve.icon" />{{ serve.service }}</span>
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="price">₹ {{ price }} <span class="text-muted"><s>&nbsp;₹ {{ discountPrice }}/-</s></span></h4>
+                            <h4 class="price">₹ {{ orignalPrice  }} <span class="text-muted"><s>&nbsp;₹ {{ price }}/-</s></span></h4>
                             <p><img src="@/assets/images/star.png" />
                                 <span class="rating">{{ rating }}</span>
                                 <span class="totalRating"></span>
@@ -47,6 +44,8 @@ export default {
         image: String,
         title: String,
         price: String,
+        orignalPrice: String,
+        services: String,
         rating: Number,
         days: Number,
         night: Number,
@@ -57,13 +56,11 @@ export default {
     },
     data() {
         return {
-            originalPrice: ''
+            
         }
     },
     computed: {
-        discountPrice() {
-            return this.originalPrice = Math.round(Number(this.price * 0.10) + Number(this.price));
-        }
+
     }
 }
 </script>
