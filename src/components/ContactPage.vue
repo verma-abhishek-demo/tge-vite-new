@@ -17,7 +17,7 @@
                                     <p class="redText" v-if="!name.isValid">Name is required.</p>
                                 </transition>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group inputForm">
                                 <label class="inputLabel" for="email">Email ID</label>
                                 <input @input="clearValidity('email', $event)" @blur="clearValidity('email', $event)"
                                     v-model="email.val" type="email" class="form-control inputField" id="email">
@@ -25,7 +25,7 @@
                                     <p class="redText" v-if="!email.isValid">Email is required.</p>
                                 </transition>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group inputForm">
                                 <label class="inputLabel" for="phone">Phone No.</label>
                                 <input @input="clearValidity('phone', $event)" @blur="clearValidity('phone', $event)"
                                     v-model="phone.val" type="text" class="form-control inputField" id="phone">
@@ -33,7 +33,7 @@
                                     <p class="redText" v-if="!phone.isValid">Phone Number is required.</p>
                                 </transition>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group inputForm">
                                 <label class="inputLabel" for="message">Message</label>
                                 <textarea @input="clearValidity('message', $event)"
                                     @blur="clearValidity('message', $event)" v-model="message.val"
@@ -248,6 +248,10 @@ span.red-text {
     padding: 30px;
     border-radius: 10px;
 
+}
+
+.inputForm {
+    margin-bottom: 36px;
 }
 
 .submit-btn {
